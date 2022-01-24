@@ -21,4 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mpstats', [App\Http\Controllers\MPStatsController::class, 'index'])->name('mpstats');
+Route::get('/mpstats/product', [App\Http\Controllers\ProductMPController::class, 'index']);
+
 
