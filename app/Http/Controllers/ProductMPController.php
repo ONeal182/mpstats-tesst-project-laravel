@@ -9,7 +9,7 @@ class ProductMPController extends Controller
 {
     public function index(Request $request)
     {
-       
+        
         dd((new MPStatsController)->getProduct($request->get('name'),'item',$request->get('id')));
         
     }
