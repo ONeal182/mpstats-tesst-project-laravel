@@ -50,16 +50,33 @@ class MPStatsController extends Controller
 
     public function getProduct($name, $type, $idProduct)
     {
+
         $url = $this->getApiProductUrl($name, $type, $idProduct);
+        $response =  $this->request($url, 'get');
+        $response->salse = $this->getSalesProduct($name, $type, $idProduct);
+        $response->by_category = $this->getHistProductCategory($name, $type, $idProduct);
+        return $response;
+    }
+
+    function getSalesProduct($name, $type, $idProduct)
+    {
+        $url = $this->getApiProductUrl($name, $type, $idProduct) . '/sales';
+        $response =  $this->request($url, 'get');
+        return $response;
+    }
+    function getHistProductCategory($name, $type, $idProduct)
+    {
+        $url = $this->getApiProductUrl($name, $type, $idProduct) . '/by_category';
         $response =  $this->request($url, 'get');
         return $response;
     }
     public function parseUrl($name)
     {
-        $path = parse_url('https://www.ozon.ru/product/smartfon-xiaomi-redmi-note-10t-4-128gb-nighttime-blue-ru-4-128gb-zelenyy-272350687/?sh=YtFWIAAAAA')['path'];
-        $path = trim($path, '/');
+        $path = parse_url($name);
+        $path = trim($path['path'], '/');
         $path = explode('-', $path);
         $path = end($path);
+        return $path;
     }
     // public function subCategory($name,$method='get',$categoryName){
     //     $type = 'subcategories';
