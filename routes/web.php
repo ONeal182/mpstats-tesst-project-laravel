@@ -22,5 +22,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mpstats', [App\Http\Controllers\MPStatsController::class, 'index'])->name('mpstats');
 Route::get('/mpstats/product', [App\Http\Controllers\ProductMPController::class, 'index']);
+Route::get('/mpstats/referenceitems', [App\Http\Controllers\ReferenceItems::class, 'index']);
+Route::get('/mpstats/referenceitems/item', [App\Http\Controllers\ReferenceItems::class, 'indexItem']);
+Route::post('/mpstats/referenceitems/date', [App\Http\Controllers\ReferenceItems::class, 'indexDate']);
+
+
 
 

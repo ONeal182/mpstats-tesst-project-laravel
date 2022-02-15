@@ -73,10 +73,25 @@ class MPStatsController extends Controller
     public function parseUrl($name)
     {
         $path = parse_url($name);
-        $path = trim($path['path'], '/');
-        $path = explode('-', $path);
-        $path = end($path);
+        $hostName = $path['host'];
+        if ($hostName == 'www.wildberries.ru') {
+            $path = trim($path['path'], '/');
+            $path = explode('/', $path);
+            
+            $path = array_slice($path, -2, 1);
+            $path = $path[0];
+        } else {
+            $path = trim($path['path'], '/');
+            $path = explode('-', $path);
+            $path = end($path);
+
+        }
         return $path;
+    }
+    public function getHostUrl($name)
+    {
+        $path = parse_url($name);
+        return $path['host'];
     }
     // public function subCategory($name,$method='get',$categoryName){
     //     $type = 'subcategories';
