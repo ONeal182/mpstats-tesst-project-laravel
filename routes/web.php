@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Compilation\CompilationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/mpstats', [App\Http\Controllers\MPStatsController::class, 'index'])->name('mpstats');
+Route::get('/mpstats/product', [App\Http\Controllers\ProductMPController::class, 'index']);
+Route::get('/mpstats/referenceitems', [App\Http\Controllers\ReferenceItems::class, 'index']);
+Route::get('/mpstats/referenceitems/item', [App\Http\Controllers\ReferenceItems::class, 'indexItem']);
+Route::post('/mpstats/referenceitems/date', [App\Http\Controllers\ReferenceItems::class, 'indexDate']);
+Route::get('/mpstats/compilation/add', [CompilationController::class,'addView']);
+Route::get('/mpstats/compilation/{id}', [CompilationController::class,'view']);
+Route::post('/mpstats/compilation/add', [CompilationController::class,'create']);
+
+
+
+
