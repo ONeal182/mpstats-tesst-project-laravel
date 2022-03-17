@@ -40,5 +40,9 @@ $(document).ready(function () {
       hideHover: 'auto'
     });
   }
-
+  $('.complitation-input button').on('click', function(e){
+    e.preventDefault();
+    console.log(3);
+    console.log($(this).parents().find('.complitation-input:nth-child(1)').clone().appendTo('.add-compilation'));
+  })
 })

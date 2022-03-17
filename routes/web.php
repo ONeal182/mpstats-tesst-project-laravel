@@ -26,6 +26,8 @@ Route::get('/mpstats/referenceitems', [App\Http\Controllers\ReferenceItems::clas
 Route::get('/mpstats/referenceitems/item', [App\Http\Controllers\ReferenceItems::class, 'indexItem']);
 Route::post('/mpstats/referenceitems/date', [App\Http\Controllers\ReferenceItems::class, 'indexDate']);
 Route::get('/mpstats/compilation/add', [CompilationController::class,'addView']);
+Route::get('/mpstats/compilation/{id}', [CompilationController::class,'view']);
+Route::post('/mpstats/compilation/add', [CompilationController::class,'create']);
 
 
 
