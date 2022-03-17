@@ -62,7 +62,12 @@ class ReferenceItems extends Controller
             }
             
         }
-        $allReit = $allReit / $countFinalRait;
+        if($allReit != 0){
+            $allReit = $allReit / $countFinalRait;
+        }else{
+            $allReit = 0;
+        }
+        
         $allFinalPrice = $allFinalPrice / $countFinalPrice;
         return view('referenceitem',['item'=>$item,'photos'=>$photos,'salse'=>$salse,'by_category'=>$by_category,'host_name' => $marketName, 'itemsales'=>$itemSales[0]->balance, 'allCash'=>$allCash,'allsales'=>$allsales,'allFinalPrice'=>round($allFinalPrice),'allReit'=>round($allReit,2) ]);
 

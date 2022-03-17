@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Compilation;
 
 use App\Http\Requests\StoreCompilationRequest;
 use App\Http\Requests\UpdateCompilationRequest;
 use App\Models\Compilation;
+Use App\Http\Controllers\Controller;
+
 
 class CompilationController extends Controller
 {
@@ -15,7 +17,13 @@ class CompilationController extends Controller
      */
     public function index()
     {
-        //
+        
+    }
+
+
+    public function addView()
+    {
+        return view('compilationadd');
     }
 
     /**
@@ -25,7 +33,7 @@ class CompilationController extends Controller
      */
     public function create()
     {
-        //
+        CompilationControllerjghgdbbdffd
     }
 
     /**

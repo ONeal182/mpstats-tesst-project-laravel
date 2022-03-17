@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Compilation\CompilationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,7 @@ Route::get('/mpstats/product', [App\Http\Controllers\ProductMPController::class,
 Route::get('/mpstats/referenceitems', [App\Http\Controllers\ReferenceItems::class, 'index']);
 Route::get('/mpstats/referenceitems/item', [App\Http\Controllers\ReferenceItems::class, 'indexItem']);
 Route::post('/mpstats/referenceitems/date', [App\Http\Controllers\ReferenceItems::class, 'indexDate']);
+Route::get('/mpstats/compilation/add', [CompilationController::class,'addView']);
 
 
 
