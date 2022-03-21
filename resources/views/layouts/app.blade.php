@@ -84,7 +84,7 @@
         <div class="container header-container">
             <div class="row">
                 <div class="col-1 logo-wrapper">
-                    <img class="header-logo" src="img/logo-header.png" alt="logo">
+                    {{-- <img class="header-logo" src="img/logo-header.png" alt="logo"> --}}
                 </div>
                 <div class="col-6">
                     <div class="header-menu">
