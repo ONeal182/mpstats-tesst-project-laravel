@@ -1,0 +1,75 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{$data->title}}</div>
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Id товара</th>
+                                <th scope="col">Название товара</th>
+                                <th>Информация</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($productArr as $product)
+                              <tr>
+                                <th scope="row">1</th>
+                               
+                                    <td>{{$product->title}}</td>
+                                    <td>
+                                         Название:{{$product->data->item->name}} <hr>
+                                        Цена:{{$product->data->item->final_price}} <hr>
+                                        <a href="{{$product->data->item->link}}">Ссылка</a><hr>
+                                        Бранд:{{$product->data->item->brand}}<hr>
+                                    </td>
+                                    <td>
+                                        <a class="show-data btn btn-primary" href="">Показать  товар</a>
+                                        
+                                            <pre style="display:none;" class="data-product"><?print_r($product->data)?></pre>
+                                            
+                                            
+                                        
+                                    </td>
+                                    
+                                    <td><a class="btn btn-danger" href="/mpstats/product/delete/{{$product->id}}">Удалить</a>
+                                    
+                                    </td>
+                                
+                                
+                                
+                              </tr>
+                            
+                                    
+                            @endforeach
+                            </tbody>
+                          </table>
+                          <form class="add-compilation" action="/mpstats/product/add" method="post">
+                            @csrf
+                            <input type="hidden" name="id_comp" value="{{$data->id}}">
+                            <div class="place">
+                                <div class="form-group d-flex  complitation-input flex-wrap">
+                                    <label for="inputAddress">Ссылка на товар</label>
+                                    <input name="url[]" type="text" class="form-control col-11" id="" >
+                                    <button class="col-1 btn btn-success">+</button>
+                                  </div>
+                            </div>
+                            <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить подборка">
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

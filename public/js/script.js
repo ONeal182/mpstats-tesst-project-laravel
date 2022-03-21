@@ -40,9 +40,24 @@ $(document).ready(function () {
       hideHover: 'auto'
     });
   }
-  $('.complitation-input button').on('click', function(e){
+  $('body').on('click','.place .complitation-input button', function(e){
+ 
     e.preventDefault();
-    console.log(3);
-    console.log($(this).parents().find('.complitation-input:nth-child(1)').clone().appendTo('.add-compilation'));
+    let clone = $(this).parents('.add-compilation').find('.complitation-input').last();
+    let newInput = clone.clone().appendTo('.place');
+    console.log(newInput.find('input').val(''));
+    clone.find('button').first().remove();
+    // e.preventDefault();
   })
+  $('.show-data').on('click', function(e){
+    e.preventDefault();
+    $(this).next().toggle( "slow", function() {
+      $(this).show();
+
+
+    });
+    
+
+  })
+
 })

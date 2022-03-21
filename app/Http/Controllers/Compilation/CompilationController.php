@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateCompilationRequest;
 use App\Models\Compilation;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MPStatsController;
+use App\Http\Controllers\Product\ProductController;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -23,15 +25,30 @@ class CompilationController extends Controller
     }
 
     public function view($id){
+        
         $data = Compilation::where('id', $id)->get()[0];
-        ?><pre>Имя подборки: <?print_r($data->title)?></pre><?
-        ?><pre>ID товаров: <?print_r($data->id_product)?></pre><?
-        ?><pre><?print_r(json_decode($data->data))?></pre><?
-        dd();
+        $id_product = $data->id_product;
+        $id_product =json_decode($id_product);
+        
+        $productArr = [];
+        $productsController = (new  ProductController);
+        foreach($id_product as $id){
+            $productArr[] = $productsController->getProductId($id);
+        }
+        foreach($productArr as $key => $product){
+            $productArr[$key]->data = json_decode($product->data);
+        }
+        // dd($productArr[0]->data);
+        return view('compilationlistitem',['data'=>$data,'productArr'=>$productArr]);
     }
     public function addView()
     {
-        return view('compilationadd');
+        if(Auth::id()){
+            return view('compilationadd');
+        }else{
+            echo 'Авторизуйтесь на сайте';
+        }
+        
     }
 
     /**
@@ -41,10 +58,15 @@ class CompilationController extends Controller
      */
     public function create(Request $request)
     {
+        if(Auth::id()){
         $post = $request->all();
         $mpstats = (new MPStatsController);
+        $productsController = (new  ProductController);
         $product = [];
         $productId = [];
+        if($post['url'][0] != null){
+
+        
         foreach ($post['url'] as $key => $url) {
             $idItem = $mpstats->parseUrl($url);
             
@@ -59,10 +81,17 @@ class CompilationController extends Controller
         }
         $product = json_encode($product);
         $productId = json_encode($productId);
-        
+       
+        $productsController->create($product);
+    }else{
+        $product = null;
+        $productId = null;
+    }
 
-        Compilation::insert(['title'=> $post['title'],'id_product' => $productId,'data'=>$product]);
+    
+    Compilation::insert(['title'=> $post['title'],'id_product' => $productId,'data'=>$product,'user_id'=>Auth::id()]);
         return back();
+    }
     }
 
     /**
@@ -73,7 +102,9 @@ class CompilationController extends Controller
      */
     public function store(StoreCompilationRequest $request)
     {
-        //
+        
+
+        
     }
 
     /**
@@ -82,9 +113,15 @@ class CompilationController extends Controller
      * @param  \App\Models\Compilation  $compilation
      * @return \Illuminate\Http\Response
      */
-    public function show(Compilation $compilation)
+    public function viewList(Compilation $compilation)
     {
-        //
+        $data = Compilation::where('user_id',Auth::id())->get();
+        $test = [];
+        foreach($data as $key => $value){
+            $data[$key]->data = json_decode($value->data);
+        }
+        // dd($data[0]->data[0]);
+        return view('compilationlist', ['data'=>$data]);
     }
 
     /**
@@ -96,6 +133,11 @@ class CompilationController extends Controller
     public function edit(Compilation $compilation)
     {
         //
+    }
+
+    public function deleted($idDelet){
+        Compilation::where('id', $idDelet)->delete();
+        return back();
     }
 
     /**

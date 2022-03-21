@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Compilation\CompilationController;
+use App\Http\Controllers\Product\ProductController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,10 +28,15 @@ Route::get('/mpstats/product', [App\Http\Controllers\ProductMPController::class,
 Route::get('/mpstats/referenceitems', [App\Http\Controllers\ReferenceItems::class, 'index']);
 Route::get('/mpstats/referenceitems/item', [App\Http\Controllers\ReferenceItems::class, 'indexItem']);
 Route::post('/mpstats/referenceitems/date', [App\Http\Controllers\ReferenceItems::class, 'indexDate']);
-Route::get('/mpstats/compilation/add', [CompilationController::class,'addView']);
-Route::get('/mpstats/compilation/{id}', [CompilationController::class,'view']);
-Route::post('/mpstats/compilation/add', [CompilationController::class,'create']);
+Route::get('/mpstats/compilation/add', [CompilationController::class, 'addView']);
+Route::post('/mpstats/compilation/add', [CompilationController::class, 'create']);
 
 
+Route::get('/mpstats/compilation/list', [CompilationController::class, 'viewList']);
 
+Route::get('/mpstats/compilation/delete/{idDelet}', [CompilationController::class, 'deleted']);
 
+Route::get('/mpstats/compilation/{id}', [CompilationController::class, 'view']);
+
+Route::get('/mpstats/product/delete/{id}', [ProductController::class, 'deleted']);
+Route::post('/mpstats/product/add', [ProductController::class, 'addCompletation']);
