@@ -28,7 +28,7 @@ class CompilationController extends Controller
     {
 
         $data = Compilation::where('id', $id)->get()[0];
-        if (!empty($id_product)) {
+        if ($data->count() > 0) {
             $id_product = $data->id_product;
             $id_product = json_decode($id_product);
 
