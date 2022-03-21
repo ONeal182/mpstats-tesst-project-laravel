@@ -30,10 +30,10 @@
                                       
                                       <td>{{$product->title}}</td>
                                       <td>
-                                           Название:{{$product->data->item->name}} <hr>
-                                          Цена:{{$product->data->item->final_price}} <hr>
+                                           Название: {{$product->data->item->name}} <hr>
+                                          Цена: {{$product->data->item->final_price}} <hr>
                                           <a href="{{$product->data->item->link}}">Ссылка</a><hr>
-                                          Бренд:{{$product->data->item->brand}}<hr>
+                                          Бренд: {{$product->data->item->brand}}<hr>
                                       </td>
                                       <td>
                                           <a class="show-data btn btn-primary" href="">Показать  товар</a>
