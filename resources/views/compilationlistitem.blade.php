@@ -33,7 +33,7 @@
                                            Название:{{$product->data->item->name}} <hr>
                                           Цена:{{$product->data->item->final_price}} <hr>
                                           <a href="{{$product->data->item->link}}">Ссылка</a><hr>
-                                          Бранд:{{$product->data->item->brand}}<hr>
+                                          Бренд:{{$product->data->item->brand}}<hr>
                                       </td>
                                       <td>
                                           <a class="show-data btn btn-primary" href="">Показать  товар</a>
@@ -68,7 +68,7 @@
                                     <button class="col-1 btn btn-success">+</button>
                                   </div>
                             </div>
-                            <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить в подборку">
+                            <input class="btn btn-primary align-self-center" type="submit" value="Добавить в подборку">
                           </form>
                     </div>
                 </div>
