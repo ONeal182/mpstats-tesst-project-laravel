@@ -16,7 +16,7 @@
                         <table class="table">
                             <thead>
                               <tr>
-                                <th scope="col">Id товара</th>
+                                <th scope="col">Артикул</th>
                                 <th scope="col">Название товара</th>
                                 <th>Информация</th>
                                 <th scope="col"></th>
