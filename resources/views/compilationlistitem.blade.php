@@ -26,7 +26,7 @@
                                 @if (!empty($productArr))
                                 @foreach ($productArr as $product)
                                 <tr>
-                                  <th scope="row">1</th>
+                                  <th scope="row">{{$product->id_product}}</th>
                                       
                                       <td>{{$product->title}}</td>
                                       <td>
