@@ -67,6 +67,7 @@ class CompilationController extends Controller
             $post = $request->all();
             $mpstats = (new MPStatsController);
             $productsController = (new  ProductController);
+            $compilation = (new Compilation);
             $product = [];
             $productId = [];
             if ($post['url'][0] != null) {
@@ -92,9 +93,12 @@ class CompilationController extends Controller
                 $productId = null;
             }
 
-
-            Compilation::insert(['title' => $post['title'], 'id_product' => $productId, 'data' => $product, 'user_id' => Auth::id()]);
-            return back();
+            $compilation->title = $post['title'];
+            $compilation->id_product = $productId;
+            $compilation->data = $product;
+            $compilation->user_id = Auth::id();
+            $compilation->save();
+            return redirect('/mpstats/compilation/'.$compilation->id);
         }
     }
 
@@ -117,7 +121,7 @@ class CompilationController extends Controller
     public function viewList(Compilation $compilation)
     {
         $data = Compilation::where('user_id', Auth::id())->get();
-        if (!empty($data->id)) {
+        if ($data->count() > 0) {
             foreach ($data as $key => $value) {
                 $data[$key]->data = json_decode($value->data);
             }
