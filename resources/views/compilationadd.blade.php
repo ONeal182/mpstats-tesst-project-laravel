@@ -39,7 +39,7 @@
 
 
 
-                                <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить подборка">
+                                <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить подборку">
                             </div>
                             
                                 

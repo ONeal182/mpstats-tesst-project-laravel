@@ -90,8 +90,8 @@
                     <div class="header-menu">
                         <a href="/home" class="header-menu__item active">Главная</a>
                         <a href="/mpstats/compilation/list" class="header-menu__item">Мои подборки</a>
-                        <a href="#" class="header-menu__item">Ozon</a>
-                        <a href="#" class="header-menu__item">Wildberries</a>
+                        {{-- <a href="#" class="header-menu__item">Ozon</a>
+                        <a href="#" class="header-menu__item">Wildberries</a> --}}
                     </div>
     
                     {{-- <div class="breadcrumbs">
