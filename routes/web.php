@@ -38,6 +38,6 @@ Route::get('/mpstats/compilation/delete/{idDelet}', [CompilationController::clas
 
 
 
-Route::get('/mpstats/product/delete/{id}', [ProductController::class, 'deleted']);
+Route::get('/mpstats/compilation/{idComp}/product/delete/{id}', [ProductController::class, 'deletedComp']);
 Route::post('/mpstats/product/add', [ProductController::class, 'addCompletation']);
 Route::get('/mpstats/compilation/{id}', [CompilationController::class, 'view']);
