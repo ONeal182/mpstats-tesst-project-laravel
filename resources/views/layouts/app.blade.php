@@ -81,7 +81,51 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container header-container">
+            <div class="row">
+                <div class="col-1 logo-wrapper">
+                    <img class="header-logo" src="img/logo-header.png" alt="logo">
+                </div>
+                <div class="col-6">
+                    <div class="header-menu">
+                        <a href="/home" class="header-menu__item active">Главная</a>
+                        <a href="/mpstats/compilation/list" class="header-menu__item">Мои подборки</a>
+                        <a href="#" class="header-menu__item">Ozon</a>
+                        <a href="#" class="header-menu__item">Wildberries</a>
+                    </div>
+    
+                    {{-- <div class="breadcrumbs">
+                        <a href="#" class="breadcrumbs-wrapper">
+                            Главная
+                        </a>
+                        <a href="#" class="breadcrumbs-wrapper">
+                            Мои подборки
+                        </a href="#">
+                        <a href="#" class="breadcrumbs-wrapper">
+                            Подборка 1
+                        </a>
+                        <a href="#" class="breadcrumbs-wrapper">
+                            Товар 1
+                        </a>
+                    </div> --}}
+                </div>
+                <div class="col-4">
+                    <div class="left-block_wrapper">
+                        {{-- <div class="btn-wrapper">
+                            <input class="custom-btn" type="button" name="" value="Проанализировать товар">
+                        </div> --}}
+                        {{-- <div class="user-block">
+                            <div class="user-block__foto">
+                                <img src="img/avatar.png" alt="avatar">
+                            </div>
+                            <a href="#" class="user-block__name">
+                                Username
+                            </a>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
 
             @yield('content')
 
