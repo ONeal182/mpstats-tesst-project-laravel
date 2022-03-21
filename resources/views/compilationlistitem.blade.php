@@ -44,7 +44,7 @@
                                           
                                       </td>
                                       
-                                      <td><a class="btn btn-danger" href="/mpstats/product/delete/{{$product->id}}">Удалить</a>
+                                      <td><a class="btn btn-danger" href="/mpstats/compilation/{{$data->id}}/product/delete/{{$product->id_product}}">Удалить</a>
                                       
                                       </td>
                                   

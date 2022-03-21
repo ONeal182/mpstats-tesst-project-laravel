@@ -112,6 +112,23 @@ class ProductController extends Controller
         Product::where('id', $idDelet)->delete();
         return back();
     }
+
+    public function deletedComp($id,$idComp){
+ 
+        $comp = Compilation::where('id', $id)->get();
+        $id_product = $comp[0]->id_product;
+        $newIdProduct = [];
+        foreach(json_decode($id_product) as $idProd){
+            if($idComp == $idProd){
+
+            }else{
+                $newIdProduct[] = $idProd;
+            }
+        }
+        $comp[0]->id_product = json_encode($newIdProduct);
+        $comp[0]->save();
+        return back();
+    }
     /**
      * Show the form for editing the specified resource.
      *
