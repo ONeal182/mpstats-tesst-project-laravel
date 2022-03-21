@@ -68,7 +68,7 @@
                                     <button class="col-1 btn btn-success">+</button>
                                   </div>
                             </div>
-                            <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить подборка">
+                            <input class="btn btn-primary col-3 align-self-center" type="submit" value="Добавить в подборку">
                           </form>
                     </div>
                 </div>
