@@ -17,7 +17,7 @@
                             </div>
                         @endif
                         
-                        <form class="add-compilation" action="/mpstats/product/add" method="post">
+                        <form class="add-compilation" action="/mpstats/compilation/add" method="post">
                             @csrf
                             
                             <div class="form-row  row d-flex flex-column">
