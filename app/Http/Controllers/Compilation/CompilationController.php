@@ -40,7 +40,7 @@ class CompilationController extends Controller
             foreach ($productArr as $key => $product) {
                 $productArr[$key]->data = json_decode($product->data);
             }
-        }else{
+        } else {
             $productArr = null;
         }
 
@@ -117,11 +117,14 @@ class CompilationController extends Controller
     public function viewList(Compilation $compilation)
     {
         $data = Compilation::where('user_id', Auth::id())->get();
-        $test = [];
-        foreach ($data as $key => $value) {
-            $data[$key]->data = json_decode($value->data);
+        if (!empty($data->id)) {
+            foreach ($data as $key => $value) {
+                $data[$key]->data = json_decode($value->data);
+            }
+        }else{
+            $data = null;
         }
-        // dd($data[0]->data[0]);
+
         return view('compilationlist', ['data' => $data]);
     }
 
