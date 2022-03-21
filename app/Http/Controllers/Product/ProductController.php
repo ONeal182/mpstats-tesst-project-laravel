@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Product;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
+
 
 class ProductController extends Controller
 {
@@ -23,9 +25,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($data)
     {
-        //
+ 
+        $data = json_decode($data);
+
+        foreach($data as $key => $value){
+            Product::insert(['title'=> $value->item->name,'id_product' => $value->item->id,'data'=>$data[$key]]);
+        }
+        
+
     }
 
     /**

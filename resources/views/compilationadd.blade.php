@@ -30,7 +30,7 @@
 
 
 
-                                <input class="col-3 align-self-center" type="submit" value="Найти">
+                                <input class="col-3 align-self-center" type="submit" value="Добавить подборка">
                             </div>
 
                         </form>

@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateCompilationRequest;
 use App\Models\Compilation;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MPStatsController;
+use App\Http\Controllers\Product\ProductController;
+
 
 use Illuminate\Http\Request;
 
@@ -43,6 +45,7 @@ class CompilationController extends Controller
     {
         $post = $request->all();
         $mpstats = (new MPStatsController);
+        $productsController = (new  ProductController);
         $product = [];
         $productId = [];
         foreach ($post['url'] as $key => $url) {
@@ -62,6 +65,7 @@ class CompilationController extends Controller
         
 
         Compilation::insert(['title'=> $post['title'],'id_product' => $productId,'data'=>$product]);
+        // $productsController->create($product);
         return back();
     }
 
