@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <a class="btn btn-warning" href="/mpstats/compilation/list">Назад</a>
+                <a style="margin-bottom: 10px" class="" href="/mpstats/compilation/list">Назад</a>
+                <br>
                 <div class="card">
                     
                     <div class="card-header">Создать новую подборку</div>
