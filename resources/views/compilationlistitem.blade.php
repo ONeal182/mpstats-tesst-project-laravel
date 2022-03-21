@@ -23,36 +23,39 @@
                               </tr>
                             </thead>
                             <tbody>
+                                @if (!empty($productArr))
                                 @foreach ($productArr as $product)
-                              <tr>
-                                <th scope="row">1</th>
-                               
-                                    <td>{{$product->title}}</td>
-                                    <td>
-                                         Название:{{$product->data->item->name}} <hr>
-                                        Цена:{{$product->data->item->final_price}} <hr>
-                                        <a href="{{$product->data->item->link}}">Ссылка</a><hr>
-                                        Бранд:{{$product->data->item->brand}}<hr>
-                                    </td>
-                                    <td>
-                                        <a class="show-data btn btn-primary" href="">Показать  товар</a>
-                                        
-                                            <pre style="display:none;" class="data-product"><?print_r($product->data)?></pre>
-                                            
-                                            
-                                        
-                                    </td>
-                                    
-                                    <td><a class="btn btn-danger" href="/mpstats/product/delete/{{$product->id}}">Удалить</a>
-                                    
-                                    </td>
+                                <tr>
+                                  <th scope="row">1</th>
+                                      
+                                      <td>{{$product->title}}</td>
+                                      <td>
+                                           Название:{{$product->data->item->name}} <hr>
+                                          Цена:{{$product->data->item->final_price}} <hr>
+                                          <a href="{{$product->data->item->link}}">Ссылка</a><hr>
+                                          Бранд:{{$product->data->item->brand}}<hr>
+                                      </td>
+                                      <td>
+                                          <a class="show-data btn btn-primary" href="">Показать  товар</a>
+                                          
+                                              <pre style="display:none;" class="data-product"><?print_r($product->data)?></pre>
+                                              
+                                              
+                                          
+                                      </td>
+                                      
+                                      <td><a class="btn btn-danger" href="/mpstats/product/delete/{{$product->id}}">Удалить</a>
+                                      
+                                      </td>
+                                  
+                                  
+                                  
+                                </tr>
+                              
+                                      
+                              @endforeach
+                                @endif
                                 
-                                
-                                
-                              </tr>
-                            
-                                    
-                            @endforeach
                             </tbody>
                           </table>
                           <form class="add-compilation" action="/mpstats/product/add" method="post">

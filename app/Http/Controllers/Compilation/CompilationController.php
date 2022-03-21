@@ -24,31 +24,36 @@ class CompilationController extends Controller
         // return view('compilation');
     }
 
-    public function view($id){
-        
+    public function view($id)
+    {
+
         $data = Compilation::where('id', $id)->get()[0];
-        $id_product = $data->id_product;
-        $id_product =json_decode($id_product);
-        
-        $productArr = [];
-        $productsController = (new  ProductController);
-        foreach($id_product as $id){
-            $productArr[] = $productsController->getProductId($id);
+        if (!empty($id_product)) {
+            $id_product = $data->id_product;
+            $id_product = json_decode($id_product);
+
+            $productArr = [];
+            $productsController = (new  ProductController);
+            foreach ($id_product as $id) {
+                $productArr[] = $productsController->getProductId($id);
+            }
+            foreach ($productArr as $key => $product) {
+                $productArr[$key]->data = json_decode($product->data);
+            }
+        }else{
+            $productArr = null;
         }
-        foreach($productArr as $key => $product){
-            $productArr[$key]->data = json_decode($product->data);
-        }
+
         // dd($productArr[0]->data);
-        return view('compilationlistitem',['data'=>$data,'productArr'=>$productArr]);
+        return view('compilationlistitem', ['data' => $data, 'productArr' => $productArr]);
     }
     public function addView()
     {
-        if(Auth::id()){
+        if (Auth::id()) {
             return view('compilationadd');
-        }else{
+        } else {
             echo 'Авторизуйтесь на сайте';
         }
-        
     }
 
     /**
@@ -58,40 +63,39 @@ class CompilationController extends Controller
      */
     public function create(Request $request)
     {
-        if(Auth::id()){
-        $post = $request->all();
-        $mpstats = (new MPStatsController);
-        $productsController = (new  ProductController);
-        $product = [];
-        $productId = [];
-        if($post['url'][0] != null){
+        if (Auth::id()) {
+            $post = $request->all();
+            $mpstats = (new MPStatsController);
+            $productsController = (new  ProductController);
+            $product = [];
+            $productId = [];
+            if ($post['url'][0] != null) {
 
-        
-        foreach ($post['url'] as $key => $url) {
-            $idItem = $mpstats->parseUrl($url);
-            
-            $hostName = $mpstats->getHostUrl($url);
-            
-            $hostName = ($hostName == 'www.wildberries.ru') ? 'wb' : 'oz';
-            $itemArray = $mpstats->getProduct($hostName, 'item', $idItem);
-            
-            $product[] = $itemArray;
-            $productId[] = $idItem;
-            
+
+                foreach ($post['url'] as $key => $url) {
+                    $idItem = $mpstats->parseUrl($url);
+
+                    $hostName = $mpstats->getHostUrl($url);
+
+                    $hostName = ($hostName == 'www.wildberries.ru') ? 'wb' : 'oz';
+                    $itemArray = $mpstats->getProduct($hostName, 'item', $idItem);
+
+                    $product[] = $itemArray;
+                    $productId[] = $idItem;
+                }
+                $product = json_encode($product);
+                $productId = json_encode($productId);
+
+                $productsController->create($product);
+            } else {
+                $product = null;
+                $productId = null;
+            }
+
+
+            Compilation::insert(['title' => $post['title'], 'id_product' => $productId, 'data' => $product, 'user_id' => Auth::id()]);
+            return back();
         }
-        $product = json_encode($product);
-        $productId = json_encode($productId);
-       
-        $productsController->create($product);
-    }else{
-        $product = null;
-        $productId = null;
-    }
-
-    
-    Compilation::insert(['title'=> $post['title'],'id_product' => $productId,'data'=>$product,'user_id'=>Auth::id()]);
-        return back();
-    }
     }
 
     /**
@@ -102,9 +106,6 @@ class CompilationController extends Controller
      */
     public function store(StoreCompilationRequest $request)
     {
-        
-
-        
     }
 
     /**
@@ -115,13 +116,13 @@ class CompilationController extends Controller
      */
     public function viewList(Compilation $compilation)
     {
-        $data = Compilation::where('user_id',Auth::id())->get();
+        $data = Compilation::where('user_id', Auth::id())->get();
         $test = [];
-        foreach($data as $key => $value){
+        foreach ($data as $key => $value) {
             $data[$key]->data = json_decode($value->data);
         }
         // dd($data[0]->data[0]);
-        return view('compilationlist', ['data'=>$data]);
+        return view('compilationlist', ['data' => $data]);
     }
 
     /**
@@ -135,7 +136,8 @@ class CompilationController extends Controller
         //
     }
 
-    public function deleted($idDelet){
+    public function deleted($idDelet)
+    {
         Compilation::where('id', $idDelet)->delete();
         return back();
     }
