@@ -31,7 +31,12 @@
                                       <td>{{$product->title}}</td>
                                       <td>
                                            Название: {{$product->data->item->name}} <hr>
-                                          Цена: {{$product->data->item->final_price}} <hr>
+                                          Цена: @if ($product->data->item->final_price != 0)
+                                          {{$product->data->item->final_price}}
+                                          @else{
+                                            {{$product->data->item->price}}
+                                          }
+                                          @endif <hr>
                                           <a href="{{$product->data->item->link}}">Ссылка</a><hr>
                                           Бренд: {{$product->data->item->brand}}<hr>
                                       </td>
