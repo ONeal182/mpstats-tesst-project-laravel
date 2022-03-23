@@ -131,8 +131,10 @@ a{
 .item-block .item-card, 
 .graphs-block{
     margin-top: 30px;
-    background-color: #E6E6E6;
+    background: #F7F7F7;
+    border-radius: 8px;
     padding: 28px;
+    padding-bottom: 0;
 }
 .graphs-block.col-7{
     width: 62.333333%;;
@@ -328,3 +330,59 @@ a{
     margin-top: 31px;
 }
 
+
+/* Сompilation */
+
+section.container-fluid.main-block {
+    margin-top: 0;
+}
+
+.main-block__header{
+    display: flex;
+    justify-content: space-between;
+}
+.main-block__header form{
+    border: 1px solid #B3B8E7;
+    border-radius: 8px;
+    max-height: 40px;
+    padding-right: 4px;
+    padding-left: 12px;
+}
+
+.main-block__header form input,
+.main-block__header form input:focus,
+.main-block__header form input:focus-visible{
+    border: none;
+    outline: none;
+}
+.main-block__header form input{
+    margin: 0 55px 0 12px;
+    width: 223px;
+}
+.main-block__header form button{
+    background: #F3F7FB;
+    border-radius: 8px;
+    color: #414BB2;
+    padding: 5px 14px;
+}
+
+.main-block__header form input::placeholder {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #A4A9B5;
+}
+
+.item-card__about-item__info__table th{
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #3C435A;
+    padding-bottom: 15px;
+}
+.item-card__about-item__info__table th:first-child{
+    padding-right: 61px;
+}
+.item-card__about-item__info__table th:nth-child(2n){
+    font-weight: 600;
+}
