@@ -18,7 +18,7 @@
 
       <div class="item-block">
         <div class="col-5 item-card">
-          <h3 class="item-card___title">О подборке</h3>
+          <h3 class="item-card__title">О подборке</h3>
 
           <div class="item-card__about-item">
             <div class="item-card__about-item__info">
@@ -79,16 +79,35 @@
         </div>
 
         <div class="col-7 graphs-block">
-          <div class="graphs-block___header">
-            <h3 class="graphs-block___title">Сводная информация</h3>
-            <div class="graphs-block__question" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-              <svg width="25" height="25" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M9 12.75H9.0075" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <div class="graphs-block__header">
+            <div>
+              <h3 class="graphs-block__title">Сводная информация</h3>
+              <div class="graphs-block__question" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9 12.75H9.0075" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <button class="graphs-block__btn__last-mounth">Прошлый месяц</button>
+            </div>
+
+            <button class="graphs-block__btn__show-more">
+              <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33341 3.16667C2.97775 3.16667 3.50008 2.64433 3.50008 2C3.50008 1.35567 2.97775 0.833333 2.33341 0.833333C1.68908 0.833333 1.16675 1.35567 1.16675 2C1.16675 2.64433 1.68908 3.16667 2.33341 3.16667Z" stroke="#414BB2" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33341 3.16667C2.97775 3.16667 3.50008 2.64433 3.50008 2C3.50008 1.35567 2.97775 0.833333 2.33341 0.833333C1.68908 0.833333 1.16675 1.35567 1.16675 2C1.16675 2.64433 1.68908 3.16667 2.33341 3.16667Z" stroke="#414BB2" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33341 3.16667C2.97775 3.16667 3.50008 2.64433 3.50008 2C3.50008 1.35567 2.97775 0.833333 2.33341 0.833333C1.68908 0.833333 1.16675 1.35567 1.16675 2C1.16675 2.64433 1.68908 3.16667 2.33341 3.16667Z" stroke="#414BB2" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
 
-            </div>
+            </button>
+
+
           </div>
 
 
@@ -153,11 +172,21 @@
   <div class="container">
     <div class="row">
       <div class="sales-data__header-block">
-        <h1 class="main-block__title">Данные о продажах</h1>
+        <div class="sales-data__right-block">
+          <h1 class="main-block__title">Товары в подборке</h1>
+          <button class="btn btn-unique btn-rounded btn-sm my-0">Перейти к подборке</button>
+        </div>
 
         <div class="header-block__filter">
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12.75H9.0075" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+
               Настроить фильтры
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -168,8 +197,16 @@
           </div>
 
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12.75H9.0075" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+
               Настроить поля
+
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Действие</a></li>
@@ -184,57 +221,51 @@
         <table class="table sales-data__table">
           <thead>
             <tr>
-              <th scope="col">Дата</th>
-              <th scope="col">Продажи</th>
-              <th scope="col">Остаток</th>
-              <th scope="col">Цена</th>
-              <th scope="col">Цена со скидкой</th>
-              <th scope="col">Сумма</th>
+              <th scope="col"></th>
+              <th scope="col">Название</th>
+              <th scope="col">Маркетплейс <br> Категория</th>
               <th scope="col">Рейтинг</th>
-              <th scope="col">Бестеллер</th>
+              <th scope="col" class="col-with-btn">
+              <span>
+                Позиция
+              </span>  
+              
+                <button class="sales-data__sorting-btn">
+                  <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 3L4 1L1 3" stroke="#3C435A" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </th>
+              <th scope="col">Бренд<br>Продавец</th>
+              <th scope="col">Выручка<br>Продаж</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>21.11.21</td>
-              <td>300</td>
-              <td>12</td>
-              <td>1500</td>
-              <td>1200</td>
-              <td>9888</td>
-              <td>4,5</td>
-              <td>Бестеллер</td>
+              <td>
+                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
+              </td>
+              <td>Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</td> <!-- name -->
+              <td>
+                Wildberries
+                <!-- marketplace -->
+                <p class="txt-gray">Игрушки для животных</p> <!-- category -->
+              </td>
+              <td>5</td> <!-- rating -->
+              <td>2</td><!-- position -->
+              <td>
+                Антицарапки
+                <!-- brand -->
+                <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
+              </td>
+              <td>
+                829 170 &#8381;
+                <p class="txt-gray">ИП Каплин Анатол...</p><!-- Sales -->
+              </td>
+              <td></td><!-- graph -->
             </tr>
-            <tr>
-              <td>21.11.21</td>
-              <td>300</td>
-              <td>12</td>
-              <td>1500</td>
-              <td>1200</td>
-              <td>9888</td>
-              <td>4,5</td>
-              <td>Бестеллер</td>
-            </tr>
-            <tr>
-              <td>21.11.21</td>
-              <td>300</td>
-              <td>12</td>
-              <td>1500</td>
-              <td>1200</td>
-              <td>9888</td>
-              <td>4,5</td>
-              <td>Бестеллер</td>
-            </tr>
-            <tr>
-              <td>21.11.21</td>
-              <td>300</td>
-              <td>12</td>
-              <td>1500</td>
-              <td>1200</td>
-              <td>9888</td>
-              <td>4,5</td>
-              <td>Бестеллер</td>
-            </tr>
+
           </tbody>
         </table>
       </div>
