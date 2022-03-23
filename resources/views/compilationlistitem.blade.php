@@ -16,22 +16,6 @@
         </form>
       </div>
 
-
-      <div class="item-card__filter-block">
-        <p class="filter-label">Период</p>
-
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            c 23.10.2021 по 23.10.2021
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Действие</a></li>
-            <li><a class="dropdown-item" href="#">Другое действие</a></li>
-            <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-          </ul>
-        </div>
-      </div>
-
       <div class="item-block">
         <div class="col-5 item-card">
           <h3 class="item-card___title">О подборке</h3>
@@ -95,7 +79,18 @@
         </div>
 
         <div class="col-7 graphs-block">
-          <h3 class="graphs-block___title">Сводная информация</h3>
+          <div class="graphs-block___header">
+            <h3 class="graphs-block___title">Сводная информация</h3>
+            <div class="graphs-block__question" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+              <svg width="25" height="25" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12.75H9.0075" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+            </div>
+          </div>
+
 
           <div id="myfirstchart" style="height: 250px;"></div>
 
@@ -117,7 +112,7 @@
       <div class="my-product">
         <div class="col-2">
           <div class="my-product__wrapper-img">
-            <img class="my-product__img" src="img/unknow.jpg" alt="product-img">
+            <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
           </div>
         </div>
         <div class="col-3 my-product__props-wrap">
@@ -125,37 +120,29 @@
             <p class="my-product__title">Название товара</p>
 
             <div class="my-product__prop">
-              <p class="right-prop">Маркетплейс: </p>
-              <p>Тест</p>
+              <p>Ozon, Wildberries </p>
             </div>
             <div class="my-product__prop">
-              <p class="right-prop">Категория: </p>
-              <p>Тест</p>
-            </div>
-            <div class="my-product__prop">
-              <p class="right-prop">Категория: </p>
-              <p>Тест</p>
+              <p>Товары для животных/Для кошек/Игрушки</p>
             </div>
           </div>
         </div>
         <div class="col-4 my-product__props-wrap">
           <div class="my-product__props-container">
             <div class="my-product__prop">
-              <p class="my-product__title right-prop">Название товара</p>
-              <p class="my-product__title"> 99</p>
+              <p class="right-prop">Цена на полке</p>
+              <p class="prop-value"> 370 &#8381;</p>
             </div>
             <div class="my-product__prop">
-              <p class="my-product__title right-prop">Название товара</p>
-              <p class="my-product__title"> 99</p>
+              <p class="right-prop">Входная цена</p>
+              <p class="prop-value"> 170 &#8381;</p>
             </div>
             <div class="my-product__prop">
-              <p class="my-product__title right-prop">Название товара</p>
-              <p class="my-product__title green-txt"> отлично</p>
+              <p class="right-prop">Оценка товара</p>
+              <p class="prop-value raiting-1"> отлично</p> <!-- raiting-1-green, -2-yelloow, -3-red -->
+
             </div>
           </div>
-        </div>
-        <div class="col-3 my-product__btn-wrap">
-          <input class="custom-btn" type="button" value="Перейти к товару">
         </div>
       </div>
     </div>

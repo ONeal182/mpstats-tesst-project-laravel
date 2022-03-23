@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}
 body {
     font-family: 'Roboto';
     font-size: 18px;
@@ -205,6 +210,14 @@ a{
 .collections-block .collections-block__props p{
     margin-bottom: 5px;
 }
+.graphs-block h3.graphs-block___title,
+.graphs-block__question {
+    display: inline;
+}
+
+.graphs-block .graphs-block__question svg {
+    margin-top: -10px;
+}
 
 .graphs-block .graphs-block__filter{
     display: flex;
@@ -252,8 +265,8 @@ a{
 
 .my-product{
     display: flex;
-    justify-content: space-between;
-    background: #E6E6E6;
+    background: #F7F7F7;
+    border-radius: 8px;
     padding: 28px;
     margin-top: 20px;
 }
@@ -262,9 +275,10 @@ a{
     max-height: 150px;
 }
 .my-product  p.my-product__title {
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 0;
+    font-size: 16px;
+    color: #414BB2;
+    text-decoration-line: underline;
+    margin-bottom: 12px;
 }
 .my-product  p.my-product__title.green-txt{
     color: #8FD14F;
@@ -273,8 +287,8 @@ a{
     display: flex;
     align-items: center;
 }
-.my-product__prop  .right-prop{
-    margin-right: 15px;
+.my-product__prop .right-prop{
+    margin-right: 45px;
 }
 
 .my-product .my-product__props-wrap{
@@ -285,6 +299,39 @@ a{
 }
 .my-product__prop p{
     margin-bottom: 0;
+}
+.my-product__prop p.prop-value{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3C435A;
+}
+.my-product__prop p.raiting-1,
+.my-product__prop p.raiting-2,
+.my-product__prop p.raiting-3{
+    position: relative;
+    padding-left: 9px;
+}
+.my-product__prop p.raiting-1::before,
+.my-product__prop p.raiting-2::before,
+.my-product__prop p.raiting-3::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    bottom: 3px;
+    /* right: 5px; */
+    left: -9px;
+}
+.my-product__prop p.raiting-1::before{
+    background-color: #009343;
+}
+.my-product__prop p.raiting-2::before{
+    background-color: #f1bd00;
+}
+.my-product__prop p.raiting-3::before{
+    background-color: #e50000;
 }
 .my-product__props-container{
     height: 100%;
@@ -303,6 +350,7 @@ a{
     padding: 9px 39px;
     margin: 0 auto;
 }
+
 .sales-data__header-block{
     display: flex;
     justify-content: space-between;
