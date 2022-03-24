@@ -108,8 +108,8 @@
             </button>
           </div>
 
-          <div id="myfirstchart" style="height: 250px;"></div>
-
+          <div id="main" style="width: 600px;height:400px;"></div>
+          
 
         </div>
       </div>
