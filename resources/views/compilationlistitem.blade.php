@@ -379,44 +379,9 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="name" class="col-form-label">Название</label>
-            <input type="text" class="form-control" id="name">
+            <label for="product-link" class="col-form-label">Вставте ссылку на товар</label>
+            <input type="text" class="form-control" id="product-link">
           </div>
-          <div class="form-group">
-            <label for="marketplace" class="col-form-label">Маркетплейс</label>
-            <input type="text" class="form-control" id="marketplace">
-          </div>
-          <div class="form-group">
-            <label for="category" class="col-form-label">Категория</label>
-            <input type="text" class="form-control" id="category">
-          </div>
-
-          <div class="form-group">
-            <label for="raiting" class="col-form-label">Рейтинг</label>
-            <input type="number" class="form-control" id="raiting">
-          </div>
-          <div class="form-group">
-            <label for="position" class="col-form-label">Позиция</label>
-            <input type="number" class="form-control" id="position">
-          </div>
-          <div class="form-group">
-            <label for="brand" class="col-form-label">Бренд</label>
-            <input type="text" class="form-control" id="brand">
-          </div>
-          <div class="form-group">
-            <label for="saller" class="col-form-label">Продавец</label>
-            <input type="text" class="form-control" id="saller">
-          </div>
-
-          <div class="form-group">
-            <label for="money" class="col-form-label">Выручка</label>
-            <input type="number" class="form-control" id="money">
-          </div>
-          <div class="form-group">
-            <label for="count" class="col-form-label">Продаж</label>
-            <input type="number" class="form-control" id="count">
-          </div>
-         
         </form>
       </div>
       <div class="modal-footer">
