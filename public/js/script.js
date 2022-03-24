@@ -109,6 +109,16 @@ var option = {
 
 myChart.setOption(option);
 
+
 })
+
+
+$('.datepicker-here').datepicker()
+
+// Доступ к экземпляру объекта
+$('.datepicker-here').data('datepicker')
+
+
+
 
 

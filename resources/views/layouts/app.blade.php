@@ -13,9 +13,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/echarts.js') }}" defer></script>
+    <script src="{{ asset('js/air-datepicker.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
-    <script src="{{ asset('js/air-datepicker.js') }}" defer></script>
+  
 
 
     <!-- Fonts -->
