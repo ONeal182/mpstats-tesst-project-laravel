@@ -106,10 +106,7 @@
               </svg>
 
             </button>
-
-
           </div>
-
 
           <div id="myfirstchart" style="height: 250px;"></div>
 
@@ -126,7 +123,7 @@
 <section class="container-fluid my-product-section">
   <div class="container">
     <div class="row">
-      <h1 class="main-block__title">Мой товар</h1>
+      <h1 class="my-product__title">Мой товар</h1>
 
       <div class="my-product">
         <div class="col-2">
@@ -134,6 +131,7 @@
             <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
           </div>
         </div>
+
         <div class="col-3 my-product__props-wrap">
           <div class="my-product__props-container">
             <p class="my-product__title">Название товара</p>
@@ -141,26 +139,49 @@
             <div class="my-product__prop">
               <p>Ozon, Wildberries </p>
             </div>
+
             <div class="my-product__prop">
               <p>Товары для животных/Для кошек/Игрушки</p>
             </div>
           </div>
         </div>
+
         <div class="col-4 my-product__props-wrap">
           <div class="my-product__props-container">
-            <div class="my-product__prop">
-              <p class="right-prop">Цена на полке</p>
-              <p class="prop-value"> 370 &#8381;</p>
-            </div>
-            <div class="my-product__prop">
-              <p class="right-prop">Входная цена</p>
-              <p class="prop-value"> 170 &#8381;</p>
-            </div>
-            <div class="my-product__prop">
-              <p class="right-prop">Оценка товара</p>
-              <p class="prop-value raiting-1"> отлично</p> <!-- raiting-1-green, -2-yelloow, -3-red -->
+            <table class="item-card__about-item__info__table">
+              <tbody>
+                <tr>
+                  <th>
+                    <p class="right-prop">Цена на полке</p>
+                  </th>
 
-            </div>
+                  <th>
+                    <p class="prop-value"> 370 &#8381;</p>
+                  </th>
+                </tr>
+
+                <tr>
+                  <th>
+                    <p class="right-prop">Входная цена</p>
+                  </th>
+
+                  <th>
+                    <p class="prop-value"> 170 &#8381;</p>
+                  </th>
+                </tr>
+
+                <tr>
+                  <th>
+                    <p class="right-prop">Оценка товара</p>
+                  </th>
+
+                  <th>
+                    <p class="prop-value raiting-1"> отлично</p> <!-- raiting-1-green, -2-yelloow, -3-red -->
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
         </div>
       </div>
@@ -173,19 +194,18 @@
     <div class="row">
       <div class="sales-data__header-block">
         <div class="sales-data__right-block">
-          <h1 class="main-block__title">Товары в подборке</h1>
-          <button class="btn btn-unique btn-rounded btn-sm my-0">Перейти к подборке</button>
+          <h1 class="sales-data__title">Товары в подборке</h1>
+          <button class="btn btn-unique btn-rounded btn-sm my-0 purple-button">Перейти к подборке</button>
         </div>
 
         <div class="header-block__filter">
           <div class="dropdown">
-            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M9 12.75H9.0075" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-
 
               Настроить фильтры
             </button>
@@ -197,16 +217,14 @@
           </div>
 
           <div class="dropdown">
-            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M9 12.75H9.0075" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
 
-
               Настроить поля
-
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Действие</a></li>
@@ -226,11 +244,8 @@
               <th scope="col">Маркетплейс <br> Категория</th>
               <th scope="col">Рейтинг</th>
               <th scope="col" class="col-with-btn">
-              <span>
-                Позиция
-              </span>  
-              
                 <button class="sales-data__sorting-btn">
+                  Позиция
                   <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 3L4 1L1 3" stroke="#3C435A" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
@@ -246,28 +261,87 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td>Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</td> <!-- name -->
-              <td>
+              <td class="col-4"> <a class="sales-data__table-link">Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</a></td> <!-- name -->
+              <td class="col-2 w-20">
                 Wildberries
                 <!-- marketplace -->
                 <p class="txt-gray">Игрушки для животных</p> <!-- category -->
               </td>
               <td>5</td> <!-- rating -->
               <td>2</td><!-- position -->
-              <td>
+              <td class="col-2">
                 Антицарапки
                 <!-- brand -->
                 <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
               </td>
-              <td>
+              <td class="col-1">
                 829 170 &#8381;
-                <p class="txt-gray">ИП Каплин Анатол...</p><!-- Sales -->
+                <p class="txt-gray">1 998</p>
               </td>
-              <td></td><!-- graph -->
+              <td class="col-1"></td><!-- graph -->
+            </tr>
+            <tr class="empty-tr"></tr>
+            <tr>
+              <td>
+                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
+              </td>
+              <td class="col-4"> <a class="sales-data__table-link">Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</a></td> <!-- name -->
+              <td class="col-2 w-20">
+                Wildberries
+                <!-- marketplace -->
+                <p class="txt-gray">Игрушки для животных</p> <!-- category -->
+              </td>
+              <td>5</td> <!-- rating -->
+              <td class="col-1">2</td><!-- position -->
+              <td class="col-2">
+                Антицарапки
+                <!-- brand -->
+                <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
+              </td>
+              <td class="col-1">
+                829 170 &#8381;
+                <p class="txt-gray">1 998</p>
+              </td>
+              <td class="col-1"></td><!-- graph -->
+            </tr>
+            <tr class="empty-tr"></tr>
+            <tr>
+              <td>
+                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
+              </td>
+              <td class="col-4"> <a class="sales-data__table-link">Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</a></td> <!-- name -->
+              <td class="col-2 w-20">
+                Wildberries
+                <!-- marketplace -->
+                <p class="txt-gray">Игрушки для животных</p> <!-- category -->
+              </td>
+              <td>5</td> <!-- rating -->
+              <td>2</td><!-- position -->
+              <td class="col-2">
+                Антицарапки
+                <!-- brand -->
+                <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
+              </td>
+              <td class="col-1">
+                829 170 &#8381;
+                <p class="txt-gray">1 998</p>
+              </td>
+              <td class="col-1"></td><!-- graph -->
             </tr>
 
           </tbody>
         </table>
+
+        <button class="btn btn-unique btn-rounded btn-sm my-0 add-new-product purple-button">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 6V12" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 9H12" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+          Добавить товар
+        </button>
+
       </div>
 
 
