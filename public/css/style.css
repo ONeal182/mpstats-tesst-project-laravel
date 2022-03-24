@@ -17,6 +17,9 @@ a{
 .w-20{
     max-width: 21% !important;
 }
+.mr-16{
+    margin-right: 16px;
+}
 .header-container {
     padding: 26px 0;
 }
@@ -149,10 +152,8 @@ a{
 .item-block .item-card{
     margin-right: 40px;
 }
-.item-block .item-card__title,
-.graphs-block__title{
-    font-weight: 600;
-    margin-bottom: 17px;
+.item-block .item-card__title{
+    margin-bottom: 28px;
 }
 .graphs-block__btn__last-mounth{
     background: none;
@@ -173,6 +174,7 @@ a{
 .item-card .item-card__title,
 .graphs-block__title{
     font-size: 24px;
+    font-weight: 600;
 }
 .item-card__about-item .item-card__about-item__img{
     max-width: 150px;
@@ -234,7 +236,35 @@ a{
     justify-content: space-between;
     align-items: center;
 }
+.graphs-block__header-block{
+    display: flex;
+    align-items: center;
+}
+.graphs-block__header-block .graphs-block__question{
+    margin-left: 6px;
+}
+.graphs-block__header .datapicker-wrap{
+    position: relative;
+}
+.graphs-block__header input.datepicker-here {
+    max-width: 114px;
+    background: #FFFFFF;
+    border: 1px solid #ECE9F1;
+    color: #11263C;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+.graphs-block__header .svg-calendar{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+}
 .graphs-block__btn__show-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFF;
     border: 1px solid #ECE9F1;
     border-radius: 4px;
