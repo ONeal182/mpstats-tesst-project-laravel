@@ -53,7 +53,47 @@ a{
     height: 7px;
     margin-left: 12px;
 }
-
+nav.navbar-custom{
+    padding: 40px 0 0;
+}
+img.header-logo {
+    margin-right: 40px;
+}
+.navbar-custom li.nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+.navbar-custom .nav-item .nav-link{
+    font-family: 'Nunito';
+    padding: 0;
+    color: #414BB2;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.navbar-custom .nav-link.disabled{
+    color: #A4A9B5;
+    text-decoration: none;
+}
+.navbar-custom .analyz-products__btn {
+    border: none;
+    padding: 11px 16px;
+    margin-right: 16px;
+    background: #414BB2;
+    border-radius: 28px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+.navbar-custom .avatar-logo{
+    border-radius: 100%;
+    max-width: 40px;
+}
+.navbar-custom .analyz-products__btn svg {
+    margin-right: 3px;
+    margin-top: -2px;
+}
 .breadcrumbs-wrapper{
     position: relative;
     padding-right: 46px;
