@@ -49,6 +49,7 @@ $(document).ready(function () {
     clone.find('button').first().remove();
     // e.preventDefault();
   })
+
   $('.show-data').on('click', function(e){
     e.preventDefault();
     $(this).next().toggle( "slow", function() {
@@ -62,8 +63,6 @@ $(document).ready(function () {
 
   // Initialize the echarts instance based on the prepared dom
   var myChart = echarts.init(document.getElementById('main'));
-
-  const colors = ['#5470C6', '#EE6666'];
 
   var monthsArray = Array(30).fill().map((e, i) => i + 1),
       currentMonth = 'Февраль',
@@ -84,6 +83,7 @@ $(document).ready(function () {
         </div>`
         
       },
+
     },
 
     xAxis: {
@@ -93,7 +93,6 @@ $(document).ready(function () {
         onZero: false,
       },
     },
-
     yAxis: {
       type: 'value',
       min: minProfit,
@@ -123,12 +122,13 @@ $(document).ready(function () {
 
   };
 
-  $('.datepicker-here').datepicker()
+  myChart.setOption(option);
 
-  // Доступ к экземпляру объекта
-  $('.datepicker-here').data('datepicker')
+  $('.datepicker-here').datepicker({})
 
+  let currentMonthNumber = new Date().getMonth(),
+      monthsArrayNames = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+      currentShortMonth = monthsArrayNames[currentMonthNumber+1].slice(0, 3);
 
-
+  $('.datepicker-here').val(currentShortMonth + ' ' + new Date().getFullYear());
 })
-
