@@ -104,7 +104,13 @@ var option = {
         [29,270],
       ]
     },
-  ]
+  ],
+//   formatter: function (params, ticket, callback) {
+//     $.get('detail?name=' + params.name, function (content) {
+//         callback(ticket, toHTML(content));
+//     });
+//     return 'Loading';
+// }
 };
 
 myChart.setOption(option);

@@ -88,13 +88,18 @@
         </nav>
         <div class="container header-container">
             <div class="row">
-                <div class="col-1 logo-wrapper">
+                <div class="col-2 header-menu header-menu_first-block">
                     {{-- <img class="header-logo" src="img/logo-header.png" alt="logo"> --}}
+                    <a href="#" class="header-menu__item with-link">Вернуться назад</a>
                 </div>
                 <div class="col-6">
                     <div class="header-menu">
-                        <a href="/home" class="header-menu__item active">Главная</a>
-                        <a href="/mpstats/compilation/list" class="header-menu__item">Мои подборки</a>
+                        <a href="/home" class="header-menu__item with-link">Главная</a>
+
+                        <a href="/mpstats/compilation/list" class="header-menu__item with-link">Мои подборки</a>
+
+                        <a href="#" class="header-menu__item">Подборка</a>
+
                         {{-- <a href="#" class="header-menu__item">Ozon</a>
                         <a href="#" class="header-menu__item">Wildberries</a> --}}
                     </div>

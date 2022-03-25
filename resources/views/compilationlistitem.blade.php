@@ -104,7 +104,8 @@
                 </svg>
               </div>
 
-              <button class="graphs-block__btn__show-more">
+              <button class="graphs-block__btn__show-more" type="button" id="dropdownMenuShowMore" data-bs-toggle="dropdown" aria-expanded="false">
+
                 <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33341 3.16667C2.97775 3.16667 3.50008 2.64433 3.50008 2C3.50008 1.35567 2.97775 0.833333 2.33341 0.833333C1.68908 0.833333 1.16675 1.35567 1.16675 2C1.16675 2.64433 1.68908 3.16667 2.33341 3.16667Z" stroke="#414BB2" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -116,6 +117,12 @@
                 </svg>
 
               </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuShowMore">
+                <li><a class="dropdown-item" href="#">Действие</a></li>
+                <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+              </ul>
             </div>
 
           </div>
