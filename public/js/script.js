@@ -61,70 +61,74 @@ $(document).ready(function () {
   })
 
   // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('main'));
+  var myChart = echarts.init(document.getElementById('main'));
 
-var monthsArray = Array(30).fill().map((e, i) => i + 1),
-    maxProfit = 280,
-    minProfit = 140;
+  const colors = ['#5470C6', '#EE6666'];
 
-var option = {
+  var monthsArray = Array(30).fill().map((e, i) => i + 1),
+      currentMonth = 'Февраль',
+      maxProfit = 280,
+      minProfit = 140;
 
-  xAxis: {
-    type: 'category',
-    data: monthsArray,
-  },
-  yAxis: {
-    type: 'value',
-    min: minProfit,
-    max: maxProfit,
-    position: 'left',
-    axisLabel: {
-      formatter: '{value} M'
-    }
-  },
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: { type: 'cross' }
-  },
-  // legend: {
-  //   data: ['Money']
-  // },
-  series: [
-    {
-      name: 'Money',
-      type: 'line',
-      smooth: true,
-      data: [
-        [1, 150],
-        [5, 157],
-        [7, 158],
-        [15, 190],
-        [22, 200],
-        [25, 180],
-        [29,270],
-      ]
+  var option = {
+
+    tooltip: {
+      trigger: 'item',
+      formatter: function (params) {
+        
+        return `
+        <div class="charts-block">
+          <p class="charts__gray-txt">Этот месяц</p>
+          <p class="charts__bold-txt">${params.data[1]}</p>
+          <p class="charts__gray-txt">${currentMonth}</p> 
+        </div>`
+        
+      },
     },
-  ],
-//   formatter: function (params, ticket, callback) {
-//     $.get('detail?name=' + params.name, function (content) {
-//         callback(ticket, toHTML(content));
-//     });
-//     return 'Loading';
-// }
-};
 
-myChart.setOption(option);
+    xAxis: {
+      type: 'category',
+      data: monthsArray,
+      axisLine: {
+        onZero: false,
+      },
+    },
+
+    yAxis: {
+      type: 'value',
+      min: minProfit,
+      max: maxProfit,
+      position: 'left',
+      axisLabel: {
+        formatter: '{value} M'
+      },
+    },
+
+    series: [
+      {
+        name: 'Money',
+        type: 'line',
+        smooth: true,
+        data: [
+          [1, 150],
+          [5, 157],
+          [7, 158],
+          [15, 190],
+          [22, 200],
+          [25, 180],
+          [29,270],
+        ]
+      },
+    ],
+
+  };
+
+  $('.datepicker-here').datepicker()
+
+  // Доступ к экземпляру объекта
+  $('.datepicker-here').data('datepicker')
+
 
 
 })
-
-
-$('.datepicker-here').datepicker()
-
-// Доступ к экземпляру объекта
-$('.datepicker-here').data('datepicker')
-
-
-
-
 
