@@ -714,6 +714,7 @@ p.charts__bold-txt {
     }
     .my-product{
         flex-direction: column;
+        padding-bottom: 50px;
     }
     .my-product .my-product__wrapper-right{
         max-width: 33%;
@@ -730,7 +731,13 @@ p.charts__bold-txt {
         max-width: none;
     }
     .my-product__props-container .item-card__about-item__info__table{
-        max-width: 50%;
+        width: 100%;
+    }
+    .my-product__props-container{
+        width: 70%;
+    }
+    .container-fluid.sales-data {
+        margin-top: 40px;
     }
     .main-block .item-block{
         flex-wrap: wrap;
