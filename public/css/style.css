@@ -522,6 +522,7 @@ button.purple-button{
     border-radius: 8px;
     border: 1px solid #F3F7FB;
     color: #414BB2;
+    font-weight: 600;
     padding: 10px 16px;
 }
 button.purple-button.small-btn{
@@ -738,4 +739,34 @@ p.charts__bold-txt {
     table.item-card__about-item__info__table {
         width: 100%;
     }
+}
+
+
+@media(max-width: 768px){
+    .graphs-block__header {
+        align-items: start;
+        flex-direction: column;
+    }
+    .graphs-block__header-block:last-child{
+        margin-top: 23px;
+        margin-bottom: -28px;
+    }
+    .chart-wrapper{
+        overflow-x: scroll;
+    }
+    .item-card__about-item__info__table th:first-child {
+        padding-right: 0px;
+    }
+    .my-product .my-product__wrapper-right,
+    .my-product__props-container .item-card__about-item__info__table {
+        max-width: 100%;
+    }
+    .my-product__props-container{
+        width: 100%;
+    }
+
+    .sales-data__wrapper{
+        margin-top: 6px;
+    }
+
 }

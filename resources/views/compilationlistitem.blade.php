@@ -46,7 +46,7 @@
                       Всего продано на сумму
                     </th>
                     <th>
-                      1 204 232 &#8381;
+                      1 204 232 &nbsp; &#8381;
                     </th>
                   </tr>
                   <tr>
@@ -54,7 +54,7 @@
                       Средняя стоимость товаров
                     </th>
                     <th>
-                      596 &#8381;
+                      596 &nbsp; &#8381;
                     </th>
                   </tr>
                   <tr>
@@ -138,8 +138,9 @@
 
           </div>
 
-          <div id="main" style="width: 100%;height:300px;"></div>
-
+          <div class="chart-wrapper">
+            <div id="main" style="width: 600px ;height:300px;"></div>
+          </div>
 
         </div>
       </div>
