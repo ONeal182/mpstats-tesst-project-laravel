@@ -696,6 +696,9 @@ p.charts__bold-txt {
 }
 
 @media(max-width: 990px){
+    .header-menu.header-menu_first-block{
+        min-width: 25%;
+    }
     .sales-data__header-block{
         flex-direction: column;
         justify-content: space-between;
@@ -768,5 +771,19 @@ p.charts__bold-txt {
     .sales-data__wrapper{
         margin-top: 6px;
     }
-
+    .header-menu.header-menu_first-block{
+        min-width: 51%;
+    }
+    .header-container .col-6 {
+        padding: 0;
+        min-width: 100%;
+    }
+    .header-menu .header-menu__item.with-link {
+        display: flex;
+        align-items: center;
+    }
+    .header-container .row{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
