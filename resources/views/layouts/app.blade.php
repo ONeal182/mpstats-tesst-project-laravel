@@ -35,37 +35,13 @@
 
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container header-nav-container">
             <div class="row">
-                <!-- <nav class="navbar navbar-expand-lg navbar-custom">
-                    <img class="header-logo" src="/img/logo.svg" alt="logo">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Мои товары</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Мои подборки</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Ozon</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Wildberries</a>
-                            </li>
-
-                        </ul>
-                        <div class="my-2 my-lg-0">
-                            <button class="analyz-products__btn ">
+                <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+                    <div class="container">
+                        <img class="header-logo" src="/img/logo.svg" alt="logo">
+                        <div class="btns-wrapper">
+                            <button class="analyz-products__btn d-md-block d-lg-none">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9 1.5V4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M9 13.5V16.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -79,46 +55,51 @@
 
                                 Анализ товара
                             </button>
-                            <img class="avatar-logo" src="/img/unknow.jpg" alt="avatar">
+                            <button class="navbar-toggler analys-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="2" rx="1" fill="#414BB2" />
+                                    <rect y="6" width="24" height="2" rx="1" fill="#414BB2" />
+                                    <rect y="12" width="24" height="2" rx="1" fill="#414BB2" />
+                                </svg>
+                            </button>
                         </div>
 
-                    </div>
-                </nav> -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+                                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                    <a class="nav-link" href="#">Мои товары</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Мои подборки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ozon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Wildberries</a>
+                                </li>
+
                             </ul>
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            <div class="my-2 my-lg-0 d-none d-lg-block">
+                                <button class="analyz-products__btn ">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1.5V4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M9 13.5V16.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M3.69751 3.69749L5.82001 5.81999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.1799 12.18L14.3024 14.3025" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M1.5 9H4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M13.5 9H16.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M3.69751 14.3025L5.82001 12.18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.1799 5.81999L14.3024 3.69749" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                    Анализ товара
+                                </button>
+                                <img class="avatar-logo" src="/img/unknow.jpg" alt="avatar">
+                            </div>
                         </div>
                     </div>
                 </nav>

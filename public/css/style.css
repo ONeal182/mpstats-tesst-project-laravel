@@ -32,9 +32,11 @@ a{
 }
 .header-menu.header-menu_first-block{
     padding: 0;
-    max-width: 15%;
+    max-width: 20%;
 }
 .header-menu .header-menu__item{
+    display: flex;
+    align-items: center;
     position: relative;
     margin-right: 12px;
     color: #A4A9B5;
@@ -53,8 +55,24 @@ a{
     height: 7px;
     margin-left: 12px;
 }
+.btns-wrapper{
+    display: flex;
+    align-items: center;
+}
 nav.navbar-custom{
     padding: 40px 0 0;
+}
+nav.navbar-custom .container-fluid {
+    padding: 0;
+}
+nav.navbar-custom .analys-btn{
+    border: none;
+    padding-right: 0;
+}
+nav.navbar-custom .analys-btn:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 img.header-logo {
     margin-right: 40px;
@@ -62,7 +80,7 @@ img.header-logo {
 .navbar-custom li.nav-item:not(:last-child) {
     margin-right: 20px;
 }
-.navbar-custom .nav-item .nav-link{
+.navbar-custom.navbar-light .navbar-nav .nav-link{
     font-family: 'Nunito';
     padding: 0;
     color: #414BB2;
@@ -70,9 +88,9 @@ img.header-logo {
     font-size: 16px;
     text-decoration: underline;
 }
-.navbar-custom .nav-link.disabled{
+.navbar-custom.navbar-light .nav-link.disabled{
     color: #A4A9B5;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .navbar-custom .analyz-products__btn {
     border: none;
@@ -789,8 +807,44 @@ p.charts__bold-txt {
         display: flex;
         align-items: center;
     }
-    .header-container .row{
+    .header-container .row,
+    .header-nav-container .row{
         padding-right: 15px;
         padding-left: 15px;
+    }
+    .my-product__props-container .item-card__about-item__info__table{
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: 480px){
+    .navbar-custom .analyz-products__btn{
+        padding: 11px 13px;
+        font-size: 14px;
+        margin-right: 0px;
+    }
+    img.header-logo {
+        margin-right: 15px;
+    }
+    button.purple-button{
+        font-weight: 500;
+        font-size: 13px;
+        padding: 10px 10px
+    }
+    .sales-data__header-block .header-block__filter {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header-block__filter .dropdown{
+        margin-top: 10px;
+    }
+    .item-card__about-item__info__table th{
+        font-size: 15px;
+    }
+    nav.navbar-custom {
+        padding: 25px 0 0;
+    }
+    .btns-wrapper,img.header-logo {
+        margin-top: 9px;
     }
 }
