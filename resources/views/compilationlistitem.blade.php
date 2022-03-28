@@ -6,14 +6,23 @@
     <div class="row">
       <div class="main-block__header">
         <h1 class="main-block__title">Пирамидки для кошек</h1>
-        <form class="form-inline">
+        <form class="form-inline 	d-none d-lg-block">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M15.75 15.75L12.4875 12.4875" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <input type="text" placeholder="Поиск по товару или подборке" aria-label="Search">
+          <input type="text" placeholder="Поиск по товару или подборке" name="search-txt" aria-label="Search">
+
           <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Искать</button>
+
         </form>
+
+        <button class="purple-button small-btn-search d-md-block d-lg-none" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.75 15.75L12.4875 12.4875" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
       </div>
 
       <div class="item-block">
@@ -82,6 +91,7 @@
           <div class="graphs-block__header">
             <div class="graphs-block__header-block">
               <h3 class="graphs-block__title">Сводная информация</h3>
+
               <div class="graphs-block__question" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                 <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#3C435A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -90,6 +100,7 @@
                 </svg>
               </div>
             </div>
+
             <div class="graphs-block__header-block">
               <button class="graphs-block__btn__last-mounth mr-16">Прошлый месяц</button>
 
@@ -145,15 +156,17 @@
       <h1 class="my-product__title">Мой товар</h1>
 
       <div class="my-product">
-        <div class="col-2">
+        <div class="col-2 my-product__wrapper-right">
           <div class="my-product__wrapper-img">
             <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
           </div>
+
+          <p class="my-product__title d-md-block d-lg-none">Название товара</p>
         </div>
 
         <div class="col-3 my-product__props-wrap">
           <div class="my-product__props-container">
-            <p class="my-product__title">Название товара</p>
+            <p class="my-product__title d-md-none d-lg-block">Название товара</p>
 
             <div class="my-product__prop">
               <p>Ozon, Wildberries </p>
@@ -214,7 +227,14 @@
       <div class="sales-data__header-block">
         <div class="sales-data__right-block">
           <h1 class="sales-data__title">Товары в подборке</h1>
-          <button class="btn btn-unique btn-rounded btn-sm my-0 purple-button">Перейти к подборке</button>
+
+          <button class="btn btn-unique btn-rounded btn-sm my-0 purple-button d-none d-lg-block">Перейти к подборке</button>
+
+          <button class="purple-button small-btn d-md-block d-lg-none">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.43933 1.5H7.5C7.08579 1.5 6.75 1.16421 6.75 0.749998C6.75 0.335785 7.08579 0 7.5 0H11.25C11.6642 0 12 0.335785 12 0.749998V4.49999C12 4.9142 11.6642 5.24998 11.25 5.24998C10.8358 5.24998 10.5 4.9142 10.5 4.49999V2.56065L5.40534 7.6553C5.11244 7.9482 4.63757 7.9482 4.34468 7.6553C4.05179 7.36241 4.05179 6.88754 4.34468 6.59465L9.43933 1.5ZM4.49999 0.75002C4.9142 0.75002 5.24998 1.08581 5.24998 1.50002C5.24998 1.91423 4.9142 2.25002 4.49999 2.25002H2.24999C1.83578 2.25002 1.5 2.5858 1.5 3.00001V9.74999C1.5 10.1642 1.83578 10.5 2.24999 10.5H8.97546C9.3865 10.5 9.72096 10.1691 9.72542 9.75813L9.75001 7.49186C9.75451 7.07767 10.0939 6.74555 10.5081 6.75004C10.9223 6.75454 11.2544 7.09395 11.2499 7.50814L11.2253 9.77441C11.2119 11.0074 10.2086 12 8.97546 12H2.24999C1.00736 12 0 10.9926 0 9.74999V3.00001C0 1.75738 1.00736 0.75002 2.24999 0.75002H4.49999Z" fill="#414BB2" />
+            </svg>
+          </button>
         </div>
 
         <div class="header-block__filter">
@@ -228,6 +248,7 @@
 
               Настроить фильтры
             </button>
+
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Действие</a></li>
               <li><a class="dropdown-item" href="#">Другое действие</a></li>
@@ -245,6 +266,7 @@
 
               Настроить поля
             </button>
+
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Действие</a></li>
               <li><a class="dropdown-item" href="#">Другое действие</a></li>
@@ -280,24 +302,35 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
+              <td class="col-4 name-cell">
+                <!-- name -->
+                <a class="sales-data__table-link">Кардиган Gun</a>
+              </td>
               <td class="col-2 w-20">
-                Ozon
-                <!-- marketplace -->
+                <p class="m-0">Ozon</p><!-- marketplace -->
                 <p class="txt-gray">Одежда</p> <!-- category -->
               </td>
+
               <td>5</td> <!-- rating -->
-              <td>2</td><!-- position -->
+
+              <td class="col-1">2</td><!-- position -->
+
               <td class="col-2">
-                Nike
-                <!-- brand -->
+                <p class="m-0">Nike</p><!-- brand -->
                 <p class="txt-gray">Nike</p><!-- seller -->
               </td>
+
               <td class="col-1">
-                829 170 &#8381;
+                <p class="m-0">829 170 &#8381;</p>
                 <p class="txt-gray">1 998</p>
               </td>
-              <td class="col-1"></td><!-- graph -->
+
+              <td class="col-1">
+                <!-- graph -->
+
+                <div id="chart-in-table" style="width: 64px;height:50px;"></div>
+
+              </td>
             </tr>
 
             <tr class="empty-tr"></tr>
@@ -306,24 +339,31 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</a></td> <!-- name -->
+              <td class="col-4"> <a class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
+
               <td class="col-2 w-20">
-                Wildberries
-                <!-- marketplace -->
+                <p class="m-0">Ozon</p><!-- marketplace -->
                 <p class="txt-gray">Игрушки для животных</p> <!-- category -->
               </td>
+
               <td>5</td> <!-- rating -->
+
               <td class="col-1">2</td><!-- position -->
+
               <td class="col-2">
-                Антицарапки
-                <!-- brand -->
+                <p class="m-0">Джи Пи Ай</p><!-- brand -->
                 <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
               </td>
+
               <td class="col-1">
-                829 170 &#8381;
+                <p class="m-0">829 170 &#8381;</p>
                 <p class="txt-gray">1 998</p>
               </td>
-              <td class="col-1"></td><!-- graph -->
+
+              <td class="col-1">
+                <!-- graph -->
+                <!-- <div class="chart-in-table" style="width: 64px;height:50px;"></div> -->
+              </td>
             </tr>
 
             <tr class="empty-tr"></tr>
@@ -332,24 +372,31 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Пирамида игра для кошки / Интерактивная игрушка для кошек баш..</a></td> <!-- name -->
+              <td class="col-4"> <a class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
+
               <td class="col-2 w-20">
-                Wildberries
-                <!-- marketplace -->
-                <p class="txt-gray">Игрушки для животных</p> <!-- category -->
+                <p class="m-0">Ozon</p><!-- marketplace -->
+                <p class="txt-gray">Одежда</p> <!-- category -->
               </td>
+
               <td>5</td> <!-- rating -->
-              <td>2</td><!-- position -->
+
+              <td class="col-1">2</td><!-- position -->
+
               <td class="col-2">
-                Антицарапки
-                <!-- brand -->
-                <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
+                <p class="m-0">Nike</p><!-- brand -->
+                <p class="txt-gray">Nike</p><!-- seller -->
               </td>
+
               <td class="col-1">
-                829 170 &#8381;
+                <p class="m-0">829 170 &#8381;</p>
                 <p class="txt-gray">1 998</p>
               </td>
-              <td class="col-1"></td><!-- graph -->
+
+              <td class="col-1">
+                <!-- graph -->
+                <!-- <div class="chart-in-table" style="width: 64px;height:50px;"></div> -->
+              </td>
             </tr>
 
           </tbody>
@@ -394,6 +441,32 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
         <button type="button" class="btn btn-primary">Добавить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Поиск</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline">
+          <div>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M15.75 15.75L12.4875 12.4875" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input type="text" placeholder="Поиск по товару или подборке" name="search-txt" aria-label="Search">
+
+          </div>
+
+          <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Искать</button>
+
+        </form>
       </div>
     </div>
   </div>

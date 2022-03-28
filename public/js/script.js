@@ -124,6 +124,77 @@ $(document).ready(function () {
 
   myChart.setOption(option);
 
+  let tableChart = echarts.init(document.getElementById('chart-in-table'));
+
+  let arrayWithDate = [
+    [1, 150],
+    [5, 157],
+    [7, 158],
+    [15, 190],
+    [22, 200],
+    [25, 250],
+    [29,240],
+  ]
+
+  let arrayBgColor = ['#FD0000', '#48C158'],
+      arrayLineColor = ['#F51010', '#0DC51F'],
+      currentLineColor, currentBgColor;
+
+console.log(arrayWithDate[arrayWithDate.length-1][1] > arrayWithDate[arrayWithDate.length-2][1])
+  if(arrayWithDate[arrayWithDate.length-1][1] > arrayWithDate[arrayWithDate.length-2][1]){
+    currentBgColor = arrayBgColor[1];
+    currentLineColor = arrayLineColor[1]
+  }else{
+
+    currentBgColor = arrayBgColor[0];
+    currentLineColor = arrayLineColor[0]
+  }
+
+  var option = {
+    animation: false,
+
+    tooltip: {
+      trigger: 'none',
+    },
+
+    axisPointer: {
+      show: false,
+    },
+
+    xAxis: {
+      show : false,
+      data: monthsArray,
+      
+    },
+    yAxis: {
+      show : false,
+      min: minProfit,
+      max: maxProfit,
+      position: 'left',
+      
+    },
+
+    series: [
+      {
+        name: 'Money',
+        type: 'line',
+        smooth: true,
+        showSymbol: false,
+        data: arrayWithDate,
+        areaStyle: {
+          color: currentBgColor
+        },
+        itemStyle: {
+          color: currentLineColor
+        },
+      },
+    ],
+
+  };
+
+  tableChart.setOption(option);
+
+
   $('.datepicker-here').datepicker({})
 
   let currentMonthNumber = new Date().getMonth(),

@@ -524,6 +524,12 @@ button.purple-button{
     color: #414BB2;
     padding: 10px 16px;
 }
+button.purple-button.small-btn{
+    padding: 13px 13px;
+}
+button.purple-button.small-btn-search{
+    padding: 10px 10px;
+}
 button.purple-button:hover{
     border: 1px solid #414BB2;
     color: #414BB2;
@@ -553,9 +559,10 @@ button.purple-button:hover{
 }
 .sales-data__wrapper {
     margin-top: 31px;
+    overflow-x: scroll;
 }
 .sales-data__table .col-1{
-    max-width: 11%;
+    min-width: 106px;
 }
 .sales-data__table tbody tr {
     border-radius: 8px;
@@ -578,32 +585,40 @@ section.container-fluid.main-block {
     align-items: center;
     padding: 0;
 }
-.main-block__header form{
+.main-block__header form,
+.modal-body form{
     border: 1px solid #B3B8E7;
     border-radius: 8px;
     max-height: 40px;
     padding: 3px 4px 3px 12px;
     margin-top: 6px;
+    justify-content: space-between;
 }
 
 .main-block__header form input,
 .main-block__header form input:focus,
-.main-block__header form input:focus-visible{
+.main-block__header form input:focus-visible,
+.modal-body form input,
+.modal-body form input:focus,
+.modal-body form input:focus-visible{
     border: none;
     outline: none;
 }
-.main-block__header form input{
+.main-block__header form input,
+.modal-body form input{
     margin: 0 55px 0 12px;
     width: 223px;
 }
-.main-block__header form button{
+.main-block__header form button,
+.modal-body form button{
     background: #F3F7FB;
     border-radius: 8px;
     color: #414BB2;
     padding: 5px 14px;
 }
 
-.main-block__header form input::placeholder {
+.main-block__header form input::placeholder,
+.modal-body  form input::placeholder {
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
@@ -635,6 +650,7 @@ section.container-fluid.main-block {
     color: #A4A9B5;
 }
 .sales-data__sorting-btn{
+    display: flex;
     color: #3C435A;
     border: none;
     outline: none;
@@ -643,9 +659,10 @@ section.container-fluid.main-block {
 }
 .sales-data__sorting-btn svg{
     margin-left: 4px;
+    margin-top: 7px;
 }
 th.col-with-btn{
-    width: 115px;
+    width: 11%;
 }
 .sales-data__table a.sales-data__table-link{
     font-weight: 600;
@@ -675,4 +692,50 @@ p.charts__bold-txt {
 }
 .charts-block {
     padding: 3px 14px;
+}
+
+@media(max-width: 990px){
+    .sales-data__header-block{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sales-data__header-block .header-block__filter{
+        margin-top: 16px;
+    }
+
+    td.name-cell{
+        min-width: 250px;
+        max-width: none;
+    }
+    .my-product{
+        flex-direction: column;
+    }
+    .my-product .my-product__wrapper-right{
+        max-width: 33%;
+        margin: 0 auto;
+        min-height: auto;
+        text-align: center;
+    }
+    .my-product__wrapper-img{
+        margin: 0 auto;
+    }
+    .my-product .my-product__props-wrap{
+        align-items: flex-start;
+        width: 100%;
+        max-width: none;
+    }
+    .my-product__props-container .item-card__about-item__info__table{
+        max-width: 50%;
+    }
+    .main-block .item-block{
+        flex-wrap: wrap;
+    }
+    .main-block .item-block .item-card, .main-block .item-block .graphs-block{
+        min-width: 100%;
+    }
+    .item-card__about-item__info,
+    table.item-card__about-item__info__table {
+        width: 100%;
+    }
 }
