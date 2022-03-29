@@ -305,7 +305,7 @@
               </td>
               <td class="col-4 name-cell">
                 <!-- name -->
-                <a class="sales-data__table-link">Кардиган Gun</a>
+                <a href="#" class="sales-data__table-link">Кардиган Gun</a>
               </td>
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->
@@ -340,7 +340,7 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
+              <td class="col-4"> <a href="#" class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
 
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->
@@ -373,7 +373,7 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
+              <td class="col-4"> <a href="#" class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
 
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->

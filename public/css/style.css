@@ -653,6 +653,14 @@ section.container-fluid.main-block {
 .item-card__about-item__info__table p{
     margin: 0;
 }
+.my-product__prop p,
+.item-card__about-item__info__table p{
+    font-family: 'Nunito';
+    font-size: 17px;
+    color: #3C435A;
+    font-weight: 400;
+    font-style: normal;
+}
 .item-card__about-item__info__table th:first-child{
     padding-right: 61px;
 }
@@ -663,9 +671,19 @@ section.container-fluid.main-block {
 
 .sales-data__table td img.my-product__img {
     max-width: 32px;
+    border-radius: 4px;
 }
 .sales-data__table .txt-gray{
     color: #A4A9B5;
+    margin-bottom: 0;
+}
+.sales-data__table p{
+    color: #3C435A;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
 }
 .sales-data__sorting-btn{
     display: flex;
@@ -683,13 +701,19 @@ th.col-with-btn{
     width: 11%;
 }
 .sales-data__table a.sales-data__table-link{
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 19px;
     text-decoration-line: underline !important;
     color: #414BB2 !important;
 }
 .sales-data__wrapper button.add-new-product svg{
     margin-right: 8px;
+}
+button.add-new-product{
+    font-family: 'Nunito';
+    font-size: 15px;
 }
 
 /* charts */
