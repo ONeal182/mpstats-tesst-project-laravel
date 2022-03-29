@@ -52,7 +52,6 @@ a{
 .header-menu .header-menu__item:not(:last-child)::after{
     content: url('/img/arrow.svg');
     width: 7px;
-    height: 7px;
     margin-left: 12px;
 }
 .btns-wrapper{
@@ -578,7 +577,7 @@ button.purple-button:hover{
 }
 .sales-data__wrapper {
     margin-top: 31px;
-    overflow-x: scroll;
+    overflow: auto;
 }
 .sales-data__table .col-1{
     min-width: 106px;
