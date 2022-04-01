@@ -52,7 +52,6 @@ a{
 .header-menu .header-menu__item:not(:last-child)::after{
     content: url('/img/arrow.svg');
     width: 7px;
-    height: 7px;
     margin-left: 12px;
 }
 .btns-wrapper{
@@ -62,6 +61,10 @@ a{
 nav.navbar-custom{
     padding: 40px 0 0;
 }
+nav.navbar-custom .container{
+    padding: 0;
+}
+
 nav.navbar-custom .container-fluid {
     padding: 0;
 }
@@ -536,12 +539,17 @@ table.sales-data__table td:last-child{
     border-radius: 0 8px 8px 0;
 }
 button.purple-button{
+    font-family: 'Nunito';
+    font-size: 15px;
     background: #F3F7FB;
     border-radius: 8px;
     border: 1px solid #F3F7FB;
     color: #414BB2;
     font-weight: 600;
     padding: 10px 16px;
+}
+button.btn-with-svg{
+    padding: 10px 16px 10px 10px;
 }
 button.purple-button.small-btn{
     padding: 13px 13px;
@@ -566,7 +574,7 @@ button.purple-button:hover{
     margin-right: 15px;
 }
 .sales-data__wrapper{
-    padding: 0;
+    padding: 10px 0;
 }
 .sales-data__wrapper tbody, td, tfoot, th, thead, tr{
     border-style: none !important;
@@ -578,7 +586,7 @@ button.purple-button:hover{
 }
 .sales-data__wrapper {
     margin-top: 31px;
-    overflow-x: scroll;
+    overflow: auto;
 }
 .sales-data__table .col-1{
     min-width: 106px;
@@ -604,8 +612,7 @@ section.container-fluid.main-block {
     align-items: center;
     padding: 0;
 }
-.main-block__header form,
-.modal-body form{
+.main-block__header form{
     border: 1px solid #B3B8E7;
     border-radius: 8px;
     max-height: 40px;
@@ -616,15 +623,11 @@ section.container-fluid.main-block {
 
 .main-block__header form input,
 .main-block__header form input:focus,
-.main-block__header form input:focus-visible,
-.modal-body form input,
-.modal-body form input:focus,
-.modal-body form input:focus-visible{
+.main-block__header form input:focus-visible{
     border: none;
     outline: none;
 }
-.main-block__header form input,
-.modal-body form input{
+.main-block__header form input{
     margin: 0 55px 0 12px;
     width: 223px;
 }
@@ -654,6 +657,14 @@ section.container-fluid.main-block {
 .item-card__about-item__info__table p{
     margin: 0;
 }
+.my-product__prop p,
+.item-card__about-item__info__table p{
+    font-family: 'Nunito';
+    font-size: 17px;
+    color: #3C435A;
+    font-weight: 400;
+    font-style: normal;
+}
 .item-card__about-item__info__table th:first-child{
     padding-right: 61px;
 }
@@ -664,9 +675,19 @@ section.container-fluid.main-block {
 
 .sales-data__table td img.my-product__img {
     max-width: 32px;
+    border-radius: 4px;
 }
 .sales-data__table .txt-gray{
     color: #A4A9B5;
+    margin-bottom: 0;
+}
+.sales-data__table p{
+    color: #3C435A;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
 }
 .sales-data__sorting-btn{
     display: flex;
@@ -684,13 +705,22 @@ th.col-with-btn{
     width: 11%;
 }
 .sales-data__table a.sales-data__table-link{
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 19px;
     text-decoration-line: underline !important;
     color: #414BB2 !important;
 }
 .sales-data__wrapper button.add-new-product svg{
     margin-right: 8px;
+}
+button.add-new-product{
+    font-family: 'Nunito';
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
 }
 
 /* charts */
@@ -712,7 +742,10 @@ p.charts__bold-txt {
 .charts-block {
     padding: 3px 14px;
 }
-
+.add-product__modal .modal-title{
+    font-family: 'Nunito';
+    font-size: 20px;
+}
 @media(max-width: 990px){
     .header-menu.header-menu_first-block{
         min-width: 25%;

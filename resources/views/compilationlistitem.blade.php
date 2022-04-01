@@ -151,7 +151,7 @@
 
 </section>
 
-<section class="container-fluid my-product-section">
+<!-- <section class="container-fluid my-product-section">
   <div class="container">
     <div class="row">
       <h1 class="my-product__title">Мой товар</h1>
@@ -209,8 +209,8 @@
                   </th>
 
                   <th>
-                    <p class="prop-value raiting-1"> отлично</p> <!-- raiting-1-green, -2-yelloow, -3-red -->
-                  </th>
+                    <p class="prop-value raiting-1"> отлично</p> raiting-1-green, -2-yelloow, -3-red -->
+                  <!-- </th>
                 </tr>
               </tbody>
             </table>
@@ -220,7 +220,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --> 
 
 <div class="container-fluid sales-data">
   <div class="container">
@@ -240,7 +240,7 @@
 
         <div class="header-block__filter">
           <div class="dropdown">
-            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button btn-with-svg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -258,7 +258,7 @@
           </div>
 
           <div class="dropdown">
-            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-unique btn-rounded btn-sm my-0 dropdown-toggle purple-button btn-with-svg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.81738 6.75C6.99371 6.24875 7.34175 5.82608 7.79985 5.55685C8.25795 5.28762 8.79655 5.1892 9.32027 5.27903C9.84398 5.36886 10.319 5.64114 10.6612 6.04765C11.0034 6.45415 11.1907 6.96864 11.1899 7.5C11.1899 9 8.93988 9.75 8.93988 9.75" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -305,7 +305,7 @@
               </td>
               <td class="col-4 name-cell">
                 <!-- name -->
-                <a class="sales-data__table-link">Кардиган Gun</a>
+                <a href="#" class="sales-data__table-link">Кардиган Gun</a>
               </td>
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->
@@ -340,7 +340,7 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
+              <td class="col-4"> <a href="#" class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
 
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->
@@ -373,7 +373,7 @@
               <td>
                 <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
               </td>
-              <td class="col-4"> <a class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
+              <td class="col-4"> <a href="#" class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
 
               <td class="col-2 w-20">
                 <p class="m-0">Ozon</p><!-- marketplace -->
@@ -403,7 +403,11 @@
           </tbody>
         </table>
 
-        <button class="btn btn-unique btn-rounded btn-sm my-0 add-new-product purple-button" data-toggle="modal" data-target="#exampleModal">
+        
+
+      </div>
+      <div class="sales-data__wrapper">
+        <button class="btn btn-unique btn-rounded btn-sm my-0 add-new-product purple-button btn-with-svg" data-toggle="modal" data-target="#exampleModal">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M9 6V12" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -412,7 +416,6 @@
 
           Добавить товар
         </button>
-
       </div>
 
 
@@ -422,7 +425,7 @@
 </div>
 @endsection
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade add-product__modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -434,14 +437,13 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="product-link" class="col-form-label">Вставте ссылку на товар</label>
-            <input type="text" class="form-control" id="product-link">
+            <input type="text" class="form-control" id="product-link" placeholder="Вставте ссылку на товар">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Добавить</button>
+        <button type="button" class="btn purple-button">Добавить</button>
       </div>
     </div>
   </div>
