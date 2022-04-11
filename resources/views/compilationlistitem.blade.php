@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="main-block__header">
-        <h1 class="main-block__title">Пирамидки для кошек</h1>
+        <h1 class="main-block__title">{{$data->title}}</h1>
         <form class="form-inline 	d-none d-lg-block">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#414BB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -38,7 +38,7 @@
                       Всего товаров в подборке
                     </th>
                     <th>
-                      8
+                      {{count($productArr)}}
                     </th>
                   </tr>
                   <tr>
@@ -299,66 +299,43 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
-              </td>
-              <td class="col-4 name-cell">
-                <!-- name -->
-                <a href="#" class="sales-data__table-link">Кардиган Gun</a>
-              </td>
-              <td class="col-2 w-20">
-                <p class="m-0">Ozon</p><!-- marketplace -->
-                <p class="txt-gray">Одежда</p> <!-- category -->
-              </td>
-
-              <td>5</td> <!-- rating -->
-
-              <td class="col-1">2</td><!-- position -->
-
-              <td class="col-2">
-                <p class="m-0">Nike</p><!-- brand -->
-                <p class="txt-gray">Nike</p><!-- seller -->
-              </td>
-
-              <td class="col-1">
-                <p class="m-0">829 170 &#8381;</p>
-                <p class="txt-gray">1 998</p>
-              </td>
-
-              <td class="col-1">
-                <!-- graph -->
-
-                <div id="chart-in-table" style="width: 64px;height:50px;"></div>
-
-              </td>
-            </tr>
-
+            
+            @foreach ( $productArr as $key => $product )
+            
             <tr class="empty-tr"></tr>
 
             <tr>
               <td>
-                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
+                <img class="my-product__img" src="{{$product->data->item->photo}}" alt="product-img">
               </td>
-              <td class="col-4"> <a href="#" class="sales-data__table-link">Игрушка для кошек с шариками "Пирамида", 15*24*13 см, синий</a></td> <!-- name -->
+             
+              <td class="col-4"> <a href="#" class="sales-data__table-link">{{$product->data->item->name}}</a></td> <!-- name -->
 
               <td class="col-2 w-20">
-                <p class="m-0">Ozon</p><!-- marketplace -->
-                <p class="txt-gray">Игрушки для животных</p> <!-- category -->
+                <p class="m-0">{{parse_url($product->data->item->link)['host']}}</p><!-- marketplace -->
+                <p class="txt-gray">{{key($product->data->by_category->categories)}}</p> <!-- category -->
               </td>
 
-              <td>5</td> <!-- rating -->
+              <td>{{$product->data->item->rating / 100}}</td> <!-- rating -->
 
               <td class="col-1">2</td><!-- position -->
 
               <td class="col-2">
-                <p class="m-0">Джи Пи Ай</p><!-- brand -->
-                <p class="txt-gray">ИП Каплин Анатол...</p><!-- seller -->
+                <p class="m-0">{{$product->data->item->brand}}</p><!-- brand -->
+                <p class="txt-gray">{{$product->data->item->seller}}</p><!-- seller -->
               </td>
 
               <td class="col-1">
-                <p class="m-0">829 170 &#8381;</p>
-                <p class="txt-gray">1 998</p>
+                <p class="m-0">
+                  <?php $allSalse=0;?>
+                  @foreach ($product->data->salse as $salse)
+                  <?php $allSalse = ($salse->final_price * $salse->sales) + $allSalse ?>
+                  
+                  @endforeach
+                  
+                  <?=$allSalse?>
+                </p>
+                <p class="txt-gray">{{$product->data->item->final_price}}</p>
               </td>
 
               <td class="col-1">
@@ -366,39 +343,8 @@
                 <!-- <div class="chart-in-table" style="width: 64px;height:50px;"></div> -->
               </td>
             </tr>
-
-            <tr class="empty-tr"></tr>
-
-            <tr>
-              <td>
-                <img class="my-product__img" src="/img/unknow.jpg" alt="product-img">
-              </td>
-              <td class="col-4"> <a href="#" class="sales-data__table-link">Кардиган Gun</a></td> <!-- name -->
-
-              <td class="col-2 w-20">
-                <p class="m-0">Ozon</p><!-- marketplace -->
-                <p class="txt-gray">Одежда</p> <!-- category -->
-              </td>
-
-              <td>5</td> <!-- rating -->
-
-              <td class="col-1">2</td><!-- position -->
-
-              <td class="col-2">
-                <p class="m-0">Nike</p><!-- brand -->
-                <p class="txt-gray">Nike</p><!-- seller -->
-              </td>
-
-              <td class="col-1">
-                <p class="m-0">829 170 &#8381;</p>
-                <p class="txt-gray">1 998</p>
-              </td>
-
-              <td class="col-1">
-                <!-- graph -->
-                <!-- <div class="chart-in-table" style="width: 64px;height:50px;"></div> -->
-              </td>
-            </tr>
+            @endforeach
+           
 
           </tbody>
         </table>
