@@ -340,7 +340,7 @@
 
               <td class="col-1">
                 <!-- graph -->
-                <!-- <div class="chart-in-table" style="width: 64px;height:50px;"></div> -->
+                <div class="chart-in-table" style="width: 64px;height:50px;"></div>
               </td>
             </tr>
             @endforeach
@@ -381,15 +381,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="post" class="add_new_product" action="/mpstats/product/add">
           <div class="form-group">
-            <input type="text" class="form-control" id="product-link" placeholder="Вставте ссылку на товар">
+            @csrf
+            <input type="hidden" name="id_comp" value="{{$data->id}}">
+            <input type="text" class="form-control" name="url[]" id="product-link" placeholder="Вставьте ссылку на товар">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn purple-button">Добавить</button>
+        <button onclick="$('.add_new_product').submit()" type="button" class="btn purple-button">Добавить</button>
       </div>
     </div>
   </div>

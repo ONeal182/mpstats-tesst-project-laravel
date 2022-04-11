@@ -202,4 +202,5 @@ console.log(arrayWithDate[arrayWithDate.length-1][1] > arrayWithDate[arrayWithDa
       currentShortMonth = monthsArrayNames[currentMonthNumber+1].slice(0, 3);
 
   $('.datepicker-here').val(currentShortMonth + ' ' + new Date().getFullYear());
+  
 })
