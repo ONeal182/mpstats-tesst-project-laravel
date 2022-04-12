@@ -125,8 +125,8 @@ $(document).ready(function () {
   myChart.setOption(option);
 
 
-  function getElementsForChart() {
-    arrayChartWrapp = document.getElementsByClassName('chart-in-table');
+  const getElementsForChart = () => {
+    const arrayChartWrapp = document.querySelectorAll('.chart-in-table');
 
     let arrayWithDate = [
       [1, 150],
@@ -135,35 +135,43 @@ $(document).ready(function () {
       [15, 190],
       [22, 200],
       [25, 250],
-      [29, 240],
+      [29, 270],
     ]
 
     setChartOption(arrayChartWrapp, arrayWithDate)
   }
 
-  function setChartOption(arrayChartWrapp, arrayWithDate) {
+  const setChartOption = (arrayChartWrapp, arrayWithDate) => {
     let tableChart = [];
 
-    Array.prototype.forEach.call(arrayChartWrapp, (el, i) => {
+    arrayChartWrapp.forEach((el, i) => {
       tableChart[i] = echarts.init(document.getElementById(el.id));
     })
 
-  
-    let arrayBgColor = ['#FD0000', '#48C158'],
-      arrayLineColor = ['#F51010', '#0DC51F'],
-      currentLineColor, currentBgColor;
+    const stateChart = {
+      'green': {
+        'bg': '#48C158',
+        'line': '#0DC51F',
+      },
+      'red':{
+        'bg': '#FD0000',
+        'line': '#F51010',
+      },
+    };
+   
+    let currentLineColor, currentBgColor;
 
     if (arrayWithDate[arrayWithDate.length - 1][1] > arrayWithDate[arrayWithDate.length - 2][1]) {//определение цвета графика
 
-      currentBgColor = arrayBgColor[1];
-      currentLineColor = arrayLineColor[1]
+      currentBgColor = stateChart.green.bg;
+      currentLineColor = stateChart.green.line;
 
     } else {
-      currentBgColor = arrayBgColor[0];
-      currentLineColor = arrayLineColor[0]
+      currentBgColor = stateChart.red.bg;
+      currentLineColor = stateChart.red.line;
     }
 
-    var option = {
+    let option = {
       animation: false,
 
       tooltip: {
@@ -205,7 +213,7 @@ $(document).ready(function () {
 
     };
 
-    tableChart.forEach((el, i) => {
+    tableChart.forEach((el) => {
       el.setOption(option);
     })
 
