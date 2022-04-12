@@ -13,16 +13,16 @@ $(document).ready(function () {
     return activeState;
   }
 
-  
+
 
   $('.graphs-block__filter .form-check-input').on('change', function () {
-    
+
     $.ajax({
       url: '/mpstats/referenceitems/date',
       method: 'post',
       dataType: 'text',
-      data: {text: 'Текст'},
-      success: function(data){
+      data: { text: 'Текст' },
+      success: function (data) {
         console.log(data);
       }
     });
@@ -40,8 +40,8 @@ $(document).ready(function () {
       hideHover: 'auto'
     });
   }
-  $('body').on('click','.place .complitation-input button', function(e){
- 
+  $('body').on('click', '.place .complitation-input button', function (e) {
+
     e.preventDefault();
     let clone = $(this).parents('.add-compilation').find('.complitation-input').last();
     let newInput = clone.clone().appendTo('.place');
@@ -50,14 +50,14 @@ $(document).ready(function () {
     // e.preventDefault();
   })
 
-  $('.show-data').on('click', function(e){
+  $('.show-data').on('click', function (e) {
     e.preventDefault();
-    $(this).next().toggle( "slow", function() {
+    $(this).next().toggle("slow", function () {
       $(this).show();
 
 
     });
-    
+
 
   })
 
@@ -65,23 +65,23 @@ $(document).ready(function () {
   var myChart = echarts.init(document.getElementById('main'));
 
   var monthsArray = Array(30).fill().map((e, i) => i + 1),
-      currentMonth = 'Февраль',
-      maxProfit = 280,
-      minProfit = 140;
+    currentMonth = 'Февраль',
+    maxProfit = 280,
+    minProfit = 140;
 
   var option = {
 
     tooltip: {
       trigger: 'item',
       formatter: function (params) {
-        
+
         return `
         <div class="charts-block">
           <p class="charts__gray-txt">Этот месяц</p>
           <p class="charts__bold-txt">${params.data[1]}</p>
           <p class="charts__gray-txt">${currentMonth}</p> 
         </div>`
-        
+
       },
 
     },
@@ -115,7 +115,7 @@ $(document).ready(function () {
           [15, 190],
           [22, 200],
           [25, 180],
-          [29,270],
+          [29, 270],
         ]
       },
     ],
@@ -124,83 +124,110 @@ $(document).ready(function () {
 
   myChart.setOption(option);
 
-  let tableChart = echarts.init(document.getElementById('chart-in-table'));
 
-  let arrayWithDate = [
-    [1, 150],
-    [5, 157],
-    [7, 158],
-    [15, 190],
-    [22, 200],
-    [25, 250],
-    [29,240],
-  ]
+  const getElementsForChart = () => {
+    const arrayChartWrapp = document.querySelectorAll('.chart-in-table');
 
-  let arrayBgColor = ['#FD0000', '#48C158'],
-      arrayLineColor = ['#F51010', '#0DC51F'],
-      currentLineColor, currentBgColor;
+    let arrayWithDate = [
+      [1, 150],
+      [5, 157],
+      [7, 158],
+      [15, 190],
+      [22, 200],
+      [25, 250],
+      [29, 270],
+    ]
 
-console.log(arrayWithDate[arrayWithDate.length-1][1] > arrayWithDate[arrayWithDate.length-2][1])
-  if(arrayWithDate[arrayWithDate.length-1][1] > arrayWithDate[arrayWithDate.length-2][1]){
-    currentBgColor = arrayBgColor[1];
-    currentLineColor = arrayLineColor[1]
-  }else{
-
-    currentBgColor = arrayBgColor[0];
-    currentLineColor = arrayLineColor[0]
+    setChartOption(arrayChartWrapp, arrayWithDate)
   }
 
-  var option = {
-    animation: false,
+  const setChartOption = (arrayChartWrapp, arrayWithDate) => {
+    let tableChart = [];
 
-    tooltip: {
-      trigger: 'none',
-    },
+    arrayChartWrapp.forEach((el, i) => {
+      tableChart[i] = echarts.init(document.getElementById(el.id));
+    })
 
-    axisPointer: {
-      show: false,
-    },
-
-    xAxis: {
-      show : false,
-      data: monthsArray,
-      
-    },
-    yAxis: {
-      show : false,
-      min: minProfit,
-      max: maxProfit,
-      position: 'left',
-      
-    },
-
-    series: [
-      {
-        name: 'Money',
-        type: 'line',
-        smooth: true,
-        showSymbol: false,
-        data: arrayWithDate,
-        areaStyle: {
-          color: currentBgColor
-        },
-        itemStyle: {
-          color: currentLineColor
-        },
+    const stateChart = {
+      'green': {
+        'bg': '#48C158',
+        'line': '#0DC51F',
       },
-    ],
+      'red':{
+        'bg': '#FD0000',
+        'line': '#F51010',
+      },
+    };
+   
+    let currentLineColor, currentBgColor;
 
-  };
+    if (arrayWithDate[arrayWithDate.length - 1][1] > arrayWithDate[arrayWithDate.length - 2][1]) {//определение цвета графика
 
-  tableChart.setOption(option);
+      currentBgColor = stateChart.green.bg;
+      currentLineColor = stateChart.green.line;
+
+    } else {
+      currentBgColor = stateChart.red.bg;
+      currentLineColor = stateChart.red.line;
+    }
+
+    let option = {
+      animation: false,
+
+      tooltip: {
+        trigger: 'none',
+      },
+
+      axisPointer: {
+        show: false,
+      },
+
+      xAxis: {
+        show: false,
+        data: monthsArray,
+
+      },
+      yAxis: {
+        show: false,
+        min: minProfit,
+        max: maxProfit,
+        position: 'left',
+
+      },
+
+      series: [
+        {
+          name: 'Money',
+          type: 'line',
+          smooth: true,
+          showSymbol: false,
+          data: arrayWithDate, //массив с данными
+          areaStyle: {
+            color: currentBgColor
+          },
+          itemStyle: {
+            color: currentLineColor
+          },
+        },
+      ],
+
+    };
+
+    tableChart.forEach((el) => {
+      el.setOption(option);
+    })
+
+  }
+
+  getElementsForChart();
 
 
   $('.datepicker-here').datepicker({})
 
   let currentMonthNumber = new Date().getMonth(),
-      monthsArrayNames = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
-      currentShortMonth = monthsArrayNames[currentMonthNumber+1].slice(0, 3);
+    monthsArrayNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    currentShortMonth = monthsArrayNames[currentMonthNumber + 1].slice(0, 3);
 
   $('.datepicker-here').val(currentShortMonth + ' ' + new Date().getFullYear());
-  
+
 })

@@ -306,7 +306,7 @@
 
             <tr>
               <td>
-                <img class="my-product__img" src="{{$product->data->item->photo}}" alt="product-img">
+                <img class="my-product__img" src="" alt="product-img">
               </td>
              
               <td class="col-4"> <a href="#" class="sales-data__table-link">{{$product->data->item->name}}</a></td> <!-- name -->
@@ -340,7 +340,7 @@
 
               <td class="col-1">
                 <!-- graph -->
-                <div class="chart-in-table" style="width: 64px;height:50px;"></div>
+                <div id="chart-in-table-{{$key}}" class="chart-in-table" style="width: 64px;height:50px;"></div>
               </td>
             </tr>
             @endforeach
@@ -380,19 +380,20 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form method="post" class="add_new_product" action="/mpstats/product/add">
+      <form method="post" class="add_new_product" action="/mpstats/product/add">
+        <div class="modal-body">
           <div class="form-group">
             @csrf
             <input type="hidden" name="id_comp" value="{{$data->id}}">
             <input type="text" class="form-control" name="url[]" id="product-link" placeholder="Вставьте ссылку на товар">
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button onclick="$('.add_new_product').submit()" type="button" class="btn purple-button">Добавить</button>
-      </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn purple-button">Добавить</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
