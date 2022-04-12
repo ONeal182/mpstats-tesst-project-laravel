@@ -208,10 +208,12 @@
                                 <p class="my-product__title right-prop">{{$item['name']}}</p>
                                 <p class="my-product__title"> 99</p>
                             </div>
+                            @if(isset($item['first_name']))
                             <div class="my-product__prop">
                                 <p class="my-product__title right-prop">{{$item['first_name']}}</p>
                                 <p class="my-product__title"> 99</p>
                             </div>
+                            @endif
                             <div class="my-product__prop">
                                 <p class="my-product__title right-prop">Название товара</p>
                                 <p class="my-product__title green-txt"> отлично</p>
