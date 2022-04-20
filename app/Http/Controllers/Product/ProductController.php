@@ -72,12 +72,14 @@ class ProductController extends Controller
             $allSumm = $price * $count;
             $mouth = $date->format('F');
             $day = $date->format('d');
-
-            $arrDate[$mouth][$day] = $allSumm;
+            $arrDate[$mouth][$key][] = ltrim($day,'0');
+            $arrDate[$mouth][$key][] = $allSumm;
+            
         }
         foreach($arrDate as $key => $value){
             $arrDate[$key] = array_reverse($value);
         }
+        
         return json_encode($arrDate);
     }
     public function addCompletation(Request $request){
