@@ -6,10 +6,9 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use App\Models\Compilation;
-use App\Http\Controllers\Compilation\CompilationController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MPStatsController;
-
+use Jenssegers\Date\Date;
 // use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request;
 class ProductController extends Controller
@@ -58,9 +57,28 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function getTableDate(Product $product,Request $request)
     {
         
+        $post = $request->all();
+        $idProduct = $post['id'];
+        $requestProduct = $product::whereIn('id',[$idProduct])->get()->first()->toArray();
+        $dateProduct = json_decode($requestProduct['data'])->salse;
+        $arrDate = [];
+        foreach($dateProduct as $key=>$value){
+            $date = new Date($value->data);
+            $price = $value->final_price;
+            $count = $value->balance;
+            $allSumm = $price * $count;
+            $mouth = $date->format('F');
+            $day = $date->format('d');
+
+            $arrDate[$mouth][$day] = $allSumm;
+        }
+        foreach($arrDate as $key => $value){
+            $arrDate[$key] = array_reverse($value);
+        }
+        return json_encode($arrDate);
     }
     public function addCompletation(Request $request){
         $post = $request->all();
