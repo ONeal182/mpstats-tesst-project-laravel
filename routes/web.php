@@ -35,10 +35,10 @@ Route::post('/mpstats/compilation/add', [CompilationController::class, 'create']
 Route::get('/mpstats/compilation/list', [CompilationController::class, 'viewList']);
 
 Route::get('/mpstats/compilation/delete/{idDelet}', [CompilationController::class, 'deleted']);
-Route::get('/mpstats/ajax', [ProductController::class, 'getTableDate']);te
+Route::get('/mpstats/ajax', [ProductController::class, 'getTableDate']);
 
 
 
-Route::get('/mpstats/compilation/{idComp}/product/delete/{id}', [ProductController::class, 'deletedComp']);
+Route::get('/mpstats/compilation/{idComp}/product/delete/{id}',[ProductController::class, 'deletedComp']);
 Route::post('/mpstats/product/add', [ProductController::class, 'addCompletation']);
 Route::get('/mpstats/compilation/{id}', [CompilationController::class, 'view']);
