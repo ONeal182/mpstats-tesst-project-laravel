@@ -35,7 +35,7 @@ Route::post('/mpstats/compilation/add', [CompilationController::class, 'create']
 Route::get('/mpstats/compilation/list', [CompilationController::class, 'viewList']);
 
 Route::get('/mpstats/compilation/delete/{idDelet}', [CompilationController::class, 'deleted']);
-Route::get('/mpstats/ajax', [ProductController::class, 'getTableDate']);
+Route::get('/mpstats/ajax', [ProductController::class, 'getTableDate']);te
 
 
 
